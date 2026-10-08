@@ -1,78 +1,68 @@
-"use client";
-
 import MaskLines from "@/components/ui/mask-lines";
 import SectionLabel from "@/components/ui/section-label";
-import { useCardAlign } from "@/components/motion/use-card-align";
 
 // ───────── Copy for this section: edit the words here ─────────
-const LABEL = { n: "S/01", name: "Three layers" };
-const HEADING = ["Three layers.", "One ranking"];
-const NOTE = "Illustrative split of effort in months 1–3 · varies by site and market";
+const LABEL = { n: "S/01", name: "What we do" };
+const HEADING = ["Three layers.", "One ranking."];
+const INTRO = "Most SEO fails because one layer gets skipped. We work all three, in this order, every month.";
 const LAYERS = [
   {
     n: "01",
-    name: "Technical",
-    share: 50,
-    text: "A site Google can read, and fast.",
-    bullets: ["Speed and Core Web Vitals", "Crawl and indexing fixes", "Mobile layout and schema markup"],
+    tag: "Technical",
+    title: "A site Google can read",
+    bullets: ["Loads in under 2 seconds on a phone", "Clean indexing, sitemap and redirects", "Schema markup for your business"],
   },
   {
     n: "02",
-    name: "Content",
-    share: 30,
-    text: "Pages that match what buyers type.",
-    bullets: ["Keyword map by buyer intent", "Service and location pages", "Guides that answer real questions"],
+    tag: "On-page",
+    title: "Pages that match the search",
+    bullets: ["One page per service and city", "Titles and copy that answer the query", "Internal links that guide people and Google"],
   },
   {
     n: "03",
-    name: "Authority",
-    share: 20,
-    text: "Proof that Google can trust.",
-    bullets: ["Links from relevant local sites", "Citation and directory cleanup", "Partner and press mentions"],
+    tag: "Authority",
+    title: "Reasons to trust you",
+    bullets: ["Local citations and directories, cleaned up", "Links from real Dallas–Fort Worth sites", "Reviews that name the job and the town"],
   },
 ];
 
 export default function ThreeLayers() {
-  const ref = useCardAlign<HTMLElement>();
-
   return (
-    <section ref={ref} className="box-border w-full overflow-hidden bg-panel px-5 py-14 md:px-10 md:py-[clamp(56px,10vh,104px)]">
+    <section className="box-border w-full bg-panel px-5 py-14 md:px-10 md:py-[clamp(56px,10vh,104px)]">
       <div className="flex flex-col gap-10 md:gap-[clamp(32px,6vh,64px)]">
-        <div className="flex flex-col gap-5">
-          <SectionLabel number={LABEL.n} name={LABEL.name} />
-          <h2 className="m-0 text-[44px] font-semibold leading-[.94] tracking-[-0.055em] md:text-[clamp(44px,4.8vw,72px)]">
-            <MaskLines lines={HEADING} />
-          </h2>
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-10">
+          <div className="flex flex-col gap-5">
+            <SectionLabel number={LABEL.n} name={LABEL.name} />
+            <h2 className="m-0 text-[40px] font-medium leading-[.98] tracking-[-0.05em] md:text-[clamp(40px,4.2vw,64px)]">
+              <MaskLines lines={HEADING} />
+            </h2>
+          </div>
+          <p data-rise className="m-0 max-w-[340px] text-[15px] leading-normal text-[#3A3C42] md:text-right md:text-[16px]">
+            {INTRO}
+          </p>
         </div>
 
-        <ul className="m-0 grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-3 md:gap-5">
+        <ul data-rise-group className="m-0 grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-3 md:gap-5">
           {LAYERS.map((l) => (
-            <li key={l.n} data-card className="flex">
-              <div className="flex w-full flex-col rounded-[6px] bg-white p-5 md:min-h-[clamp(340px,46vh,440px)] md:p-6">
-                <span className="flex items-start justify-between font-mono text-[12px] uppercase tracking-[.08em]">
-                  {l.n}
-                  <span className="text-[#9A9DA5]">{l.share}%</span>
+            <li key={l.n} data-rise className="flex">
+              <div className="flex w-full flex-col rounded-[4px] border-t-2 border-accent bg-white p-5 md:p-6">
+                <span className="flex items-start justify-between font-mono text-[11px] uppercase tracking-[.08em]">
+                  {l.n} — {l.tag}
+                  <span className="size-[8px] rounded-full bg-[#D3D5DB]" />
                 </span>
-                <span className="mt-8 text-[30px] font-semibold leading-[1.02] tracking-[-0.045em] md:text-[clamp(28px,2.6vw,40px)]">{l.name}</span>
-                <span className="mt-2 text-[15px] text-[#3A3C42] md:text-[16px]">{l.text}</span>
-                <ul className="m-0 mt-6 flex list-none flex-col gap-2 p-0 text-[15px] leading-[1.35]">
+                <h3 className="m-0 mt-8 text-[24px] font-medium leading-[1.1] tracking-[-0.03em] md:text-[28px]">{l.title}</h3>
+                <ul className="m-0 mt-8 flex list-none flex-col p-0">
                   {l.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-3">
-                      <span className="mt-[7px] size-[7px] flex-none rounded-full bg-accent" />
+                    <li key={b} className="flex items-center gap-3 border-t border-dashed border-[#C9CBD1] py-3.5 text-[14px] leading-[1.35] text-[#3A3C42] md:text-[15px]">
+                      <span className="font-mono text-[14px] leading-none text-accent">+</span>
                       {b}
                     </li>
                   ))}
                 </ul>
-                <div className="mt-auto pt-8">
-                  <div className="h-2 w-full rounded-full bg-[#F3F4F6]">
-                    <div data-grow className="h-full rounded-full bg-ink" style={{ width: `${l.share}%` }} />
-                  </div>
-                </div>
               </div>
             </li>
           ))}
         </ul>
-        <p className="m-0 font-mono text-[11px] uppercase tracking-[.08em] text-accent">{NOTE}</p>
       </div>
     </section>
   );

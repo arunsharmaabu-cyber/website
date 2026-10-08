@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 //   [data-line]   headline line slides up out of its clipped box
 //   [data-rise]   block slides up a little (staggered when several share a [data-rise-group])
 //   [data-grow]   bar grows from the left
+//   [data-grow-y] vertical bar grows from the bottom
 //   [data-stamp]  stamp lands once
 //   [data-draw]   svg path draws itself
 // Nothing is hidden without JS or with reduced motion.
@@ -47,6 +48,11 @@ export default function PageReveal({ children, className = "" }: { children: Rea
         // bars grow from the left
         root.querySelectorAll<HTMLElement>("[data-grow]").forEach((el, i) => {
           gsap.fromTo(el, { scaleX: 0 }, { scaleX: 1, transformOrigin: "left center", duration: 1.1, ease: "power3.out", delay: (i % 4) * 0.1, scrollTrigger: { trigger: el, ...once } });
+        });
+
+        // vertical bars grow from the bottom
+        root.querySelectorAll<HTMLElement>("[data-grow-y]").forEach((el, i) => {
+          gsap.fromTo(el, { scaleY: 0 }, { scaleY: 1, transformOrigin: "bottom center", duration: 1, ease: "power3.out", delay: (i % 6) * 0.08, scrollTrigger: { trigger: el, ...once } });
         });
 
         // stamp lands once

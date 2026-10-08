@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import SeoHero from "@/components/sections/seo/seo-hero";
 import ThreeLayers from "@/components/sections/seo/three-layers";
-import WhatMoves from "@/components/sections/seo/what-moves";
+import ClearSteps from "@/components/sections/seo/clear-steps";
 import MonthByMonth from "@/components/sections/seo/month-by-month";
 import Faq, { FAQS } from "@/components/sections/seo/faq";
-import SeoCta from "@/components/sections/seo/seo-cta";
 import Footer from "@/components/sections/footer";
 import PageReveal from "@/components/motion/page-reveal";
 
@@ -51,10 +50,9 @@ export default function SeoPage() {
         <main id="top">
           <SeoHero />
           <ThreeLayers />
-          <WhatMoves />
+          <ClearSteps />
           <MonthByMonth />
           <Faq />
-          <SeoCta />
         </main>
       </PageReveal>
       <Footer />

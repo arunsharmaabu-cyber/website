@@ -64,9 +64,16 @@ Everything here is visible on the site as a placeholder. Search the file named i
 | Placeholder | File |
 |---|---|
 | Sample search, businesses, ratings in the hero animation | `components/sections/seo/seo-hero.tsx` |
-| Sample keyword table (Sample data note) | `what-moves.tsx` |
-| Illustrative effort split, draft one-liners and bullets | `three-layers.tsx`, `month-by-month.tsx` |
+| Sample monthly report (calls 128, keywords, chart) | `clear-steps.tsx` |
+| Draft bullets and step lines | `three-layers.tsx`, `clear-steps.tsx`, `month-by-month.tsx` |
 | Draft FAQ answers | `faq.tsx` |
+
+## Local SEO page (`/marketing/local-seo`)
+| Placeholder | File |
+|---|---|
+| Sample map, search and result card (Your Business, 4.9) | `components/sections/local-seo/local-hero.tsx` |
+| Sample report: calls per month, directions 214, visits 1,380, reviews 18 | `your-report.tsx` |
+| Draft FAQ answers (last three) | `faq.tsx` |
 
 ## Not built yet
 Privacy and Terms text, `/services`, service sub-pages, `/contact` + FAQ, real form submit (email + lead storage), PageSpeed route, analytics, OG image, sitemap/robots.

@@ -16,7 +16,7 @@ const PHONE = { label: "(214) 000-0000", href: "tel:+12140000000" };
 const NAV_CTA = "Get audit";
 const AUDIT_HREF = "/contact#audit";
 
-// Services dropdown: left list; the middle column shows what is inside the hovered service
+// Services dropdown: three names; Marketing expands (+) to the seven services, names only
 const MARKETING_PAGES = [
   { n: "S/001.1", label: "SEO", text: "Rank higher on Google", href: "/marketing/seo" },
   { n: "S/001.2", label: "Local SEO", text: "Own the map pack", href: "/marketing/local-seo" },
@@ -31,10 +31,7 @@ const SERVICES = [
   { n: "S/002", label: "Web design", href: "/web-design" },
   { n: "S/003", label: "Consulting", href: "/consulting" },
 ];
-const SERVICES_BLURB = "Seven ways to get found, trusted and called. One page for web design. One for consulting.";
-const MARKETING_TITLE = "Inside Marketing / 7 pages";
-const MARKETING_ALL = { label: "All marketing", href: "/marketing" };
-const MENU_PANEL = { kicker: "Free / 24h", title: "Find out what's costing you calls.", cta: "Get my free audit" };
+const MENU_PANEL = { cta: "Get my free audit" };
 
 // Mobile menu: same links; "Contact + FAQ" is one row
 const MOBILE_LINKS = [
@@ -49,7 +46,7 @@ export default function SiteHeader() {
   const [open, setOpen] = useState(false); // mobile menu
   const [mobileServices, setMobileServices] = useState(true);
   const [menu, setMenu] = useState(false); // desktop Services dropdown
-  const [active, setActive] = useState(0);
+  const [expanded, setExpanded] = useState(false); // Marketing sub-list in the desktop dropdown
   const lastY = useRef(0);
   const ticking = useRef(false);
 
@@ -119,7 +116,13 @@ export default function SiteHeader() {
 
         {/* desktop links */}
         <div className="hidden items-center gap-10 font-mono text-[12px] uppercase tracking-[.08em] md:flex">
-          <div onMouseEnter={() => setMenu(true)} className="flex items-center">
+          <div
+            onMouseEnter={() => {
+              if (!menu) setExpanded(false);
+              setMenu(true);
+            }}
+            className="relative flex items-center"
+          >
             <a
               href="/marketing"
               aria-haspopup="true"
@@ -132,6 +135,69 @@ export default function SiteHeader() {
                 <path d="M1 1l4 4 4-4" />
               </svg>
             </a>
+          {/* desktop Services dropdown: three names, Marketing expands with + */}
+          <div
+            className={`absolute left-[-16px] top-full pt-5 font-sans normal-case tracking-normal transition-[opacity,transform] duration-200 ease-out ${
+              menu ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
+            }`}
+            aria-hidden={!menu}
+          >
+            <div className="w-[280px] rounded-[14px] border border-[#DADCE1] bg-white p-2 shadow-[0_30px_60px_-30px_rgba(11,11,12,.35)]">
+              <div className="flex items-center rounded-[10px] hover:bg-panel">
+                <a
+                  href={SERVICES[0].href}
+                  tabIndex={menu ? 0 : -1}
+                  onClick={() => setMenu(false)}
+                  className="flex-1 px-4 py-3 text-[20px] font-semibold tracking-[-0.03em] no-underline"
+                >
+                  {SERVICES[0].label}
+                </a>
+                <button
+                  type="button"
+                  tabIndex={menu ? 0 : -1}
+                  aria-label="Show marketing services"
+                  aria-expanded={expanded}
+                  aria-controls="marketing-sub"
+                  onMouseEnter={() => setExpanded(true)}
+                  onFocus={() => setExpanded(true)}
+                  onClick={() => setExpanded((v) => !v)}
+                  className="mr-2 flex size-8 cursor-pointer items-center justify-center rounded-full border border-ink bg-transparent p-0"
+                >
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#FF4D00" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true" className={`transition-transform duration-200 ${expanded ? "rotate-45" : ""}`}>
+                    <path d="M6 1v10M1 6h10" />
+                  </svg>
+                </button>
+              </div>
+              <div id="marketing-sub" className={`grid transition-[grid-template-rows] duration-300 ease-out ${expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+                <div className="overflow-hidden">
+                  <div className="flex flex-col pb-1 pl-4 pt-1">
+                    {MARKETING_PAGES.map((p) => (
+                      <a
+                        key={p.label}
+                        href={p.href}
+                        tabIndex={menu && expanded ? 0 : -1}
+                        onClick={() => setMenu(false)}
+                        className="rounded-[8px] px-3 py-2 text-[16px] tracking-[-0.01em] text-[#3A3C42] no-underline transition-colors hover:bg-panel hover:text-ink"
+                      >
+                        {p.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              {SERVICES.slice(1).map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  tabIndex={menu ? 0 : -1}
+                  onClick={() => setMenu(false)}
+                  className="block rounded-[10px] px-4 py-3 text-[20px] font-semibold tracking-[-0.03em] no-underline transition-colors hover:bg-panel"
+                >
+                  {s.label}
+                </a>
+              ))}
+            </div>
+          </div>
           </div>
           {NAV_LINKS.map((l) => (
             <a key={l.label} href={l.href} onFocus={() => setMenu(false)} onMouseEnter={() => setMenu(false)} className={navLink}>
@@ -164,78 +230,6 @@ export default function SiteHeader() {
           </button>
         </div>
       </nav>
-
-      {/* desktop Services dropdown */}
-      <div
-        className={`absolute inset-x-0 top-full hidden px-10 pb-6 pt-3 transition-[opacity,transform] duration-200 ease-out md:block ${
-          menu ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
-        }`}
-        aria-hidden={!menu}
-      >
-        <div className="grid grid-cols-[0.95fr_1.7fr_1fr] gap-8 rounded-[20px] border border-[#DADCE1] bg-white p-5 shadow-[0_30px_60px_-30px_rgba(11,11,12,.35)]">
-          <div className="flex flex-col gap-1">
-            {SERVICES.map((s, i) => (
-              <a
-                key={s.label}
-                href={s.href}
-                tabIndex={menu ? 0 : -1}
-                onMouseEnter={() => setActive(i)}
-                onFocus={() => setActive(i)}
-                onClick={() => setMenu(false)}
-                className={`flex items-center gap-5 rounded-xl px-5 py-[18px] no-underline transition-colors ${i === active ? "bg-panel" : ""}`}
-              >
-                <span className="w-10 font-mono text-[11px] tracking-[.04em]">{s.n}</span>
-                <span className="flex-1 text-[26px] font-semibold tracking-[-0.03em]">{s.label}</span>
-                {i === active && <ArrowSVG className="size-4" />}
-              </a>
-            ))}
-            <p className="m-0 mt-4 max-w-[300px] px-5 text-[14px] leading-[1.5] text-[#5C5F66]">{SERVICES_BLURB}</p>
-          </div>
-
-          <div className="min-w-0">
-            {active === 0 && (
-              <>
-                <div className="border-b border-dashed border-[#A9ACB4] pb-3 font-mono text-[11px] uppercase tracking-[.08em] text-[#5C5F66]">{MARKETING_TITLE}</div>
-                <div className="grid grid-cols-2 gap-x-8">
-                  {MARKETING_PAGES.map((p) => (
-                    <a
-                      key={p.label}
-                      href={p.href}
-                      tabIndex={menu ? 0 : -1}
-                      onClick={() => setMenu(false)}
-                      className="flex items-start gap-3 border-b border-dashed border-[#A9ACB4] py-3 no-underline"
-                    >
-                      <span className="w-14 flex-none pt-1.5 font-mono text-[10px] tracking-[.04em] text-accent">{p.n}</span>
-                      <span className="flex flex-col gap-0.5">
-                        <span className="text-[18px] font-semibold leading-[1.15] tracking-[-0.02em]">{p.label}</span>
-                        <span className="text-[13px] leading-[1.4] text-[#5C5F66]">{p.text}</span>
-                      </span>
-                    </a>
-                  ))}
-                  <a href={MARKETING_ALL.href} tabIndex={menu ? 0 : -1} onClick={() => setMenu(false)} className="group flex min-h-11 items-center gap-3 self-center font-mono text-[11px] uppercase tracking-[.1em] no-underline">
-                    {MARKETING_ALL.label}
-                    <ArrowSVG className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </a>
-                </div>
-              </>
-            )}
-          </div>
-
-          <a
-            href={AUDIT_HREF}
-            tabIndex={menu ? 0 : -1}
-            onClick={() => setMenu(false)}
-            className="flex flex-col justify-between gap-8 rounded-2xl bg-accent p-6 text-ink no-underline"
-          >
-            <span className="font-mono text-[11px] uppercase tracking-[.08em]">{MENU_PANEL.kicker}</span>
-            <span className="text-[32px] font-semibold leading-[1] tracking-[-0.05em]">{MENU_PANEL.title}</span>
-            <span className="flex h-12 items-center justify-center gap-3 rounded-[4px] bg-ink font-mono text-[12px] font-medium uppercase tracking-[.1em] text-page">
-              {MENU_PANEL.cta}
-              <ArrowSVG className="size-4" />
-            </span>
-          </a>
-        </div>
-      </div>
 
       {/* mobile menu: full screen under the bar; Services expands to the 7 marketing pages */}
       <div
