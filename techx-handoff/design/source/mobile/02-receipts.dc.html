@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TechX Media — Mobile receipts</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Geist','Helvetica Neue',system-ui,sans-serif;color:#0B0B0C;-webkit-font-smoothing:antialiased}
+a{color:#0B0B0C}a:hover{color:#FF4D00}
+button{font-family:'Geist Mono',ui-monospace,monospace}
+a:focus-visible,button:focus-visible{outline:2px solid #0B0B0C;outline-offset:3px}
+@keyframes blink{50%{opacity:.15}}
+.pulse{animation:blink 1.4s steps(1) infinite}
+@media (prefers-reduced-motion:reduce){.pulse{animation:none}}
+</style>
+</helmet>
+
+<div style="box-sizing:border-box;width:100%;padding:8px;background:#F7F7F8">
+<div style="box-sizing:border-box;background:#EDEEF1;border-radius:16px;padding:24px 18px 24px;display:flex;flex-direction:column;gap:20px">
+
+<div>
+<div style="display:flex;align-items:center;gap:12px;font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase"><span>S/002</span><span style="width:32px;border-top:1px dashed #0B0B0C"></span><span>Receipts</span></div>
+<h2 style="margin:16px 0 0;font-size:42px;line-height:.92;font-weight:600;letter-spacing:-0.06em"><span style="display:block">Receipts,</span><span style="display:block">not promises<span style="color:{{accent}}">.</span></span></h2>
+<p style="margin:12px 0 0;font-size:15px;line-height:1.45;color:#3A3C42">Real call logs. Every number is tracked, not guessed.</p>
+<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px">
+<button type="button" style="min-height:44px;background:#0B0B0C;color:#F7F7F8;border:1px solid #0B0B0C;border-radius:999px;padding:0 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer">/014 Roofing</button>
+<button type="button" style="min-height:44px;background:transparent;color:#0B0B0C;border:1px solid #A9ACB4;border-radius:999px;padding:0 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer">/022 HVAC</button>
+<button type="button" style="min-height:44px;background:transparent;color:#0B0B0C;border:1px solid #A9ACB4;border-radius:999px;padding:0 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer">/031 Dental</button>
+</div>
+<div style="margin-top:10px;font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:{{accent}};font-weight:600">Sample data · replace with real client numbers</div>
+</div>
+
+<div style="box-sizing:border-box;background:{{accent}};border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;justify-content:space-between;gap:12px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase"><span>Client/014</span><span>Plano · Roofing</span></div>
+<div>
+<div style="font-size:96px;line-height:.82;font-weight:600;letter-spacing:-0.07em;margin-left:-4px">+212%</div>
+<div style="margin-top:14px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:1.7">Inbound calls · 6 months</div>
+<p style="margin:8px 0 0;font-size:15px;line-height:1.45">From 41 calls a month to 128. Counted by call-tracking numbers, not by us.</p>
+</div>
+<div>
+<svg viewBox="0 0 600 150" width="100%" height="64" preserveAspectRatio="none" role="img" aria-label="Line chart: monthly inbound calls climbing from 41 to 128 over six months" style="display:block">
+<g stroke="#0B0B0C" stroke-opacity=".28" stroke-dasharray="4 5" stroke-width="1"><line x1="0" y1="30" x2="600" y2="30"/><line x1="0" y1="75" x2="600" y2="75"/><line x1="0" y1="120" x2="600" y2="120"/></g>
+<path d="M0 124 C60 122 100 116 150 106 S240 90 290 76 S400 52 450 34 S540 14 592 10 L592 150 L0 150 Z" fill="#0B0B0C" fill-opacity=".1"/>
+<path d="M0 124 C60 122 100 116 150 106 S240 90 290 76 S400 52 450 34 S540 14 592 10" fill="none" stroke="#0B0B0C" stroke-width="3" stroke-linecap="round"/>
+<circle cx="590" cy="10" r="9" fill="#F7F7F8" stroke="#0B0B0C" stroke-width="3"/>
+</svg>
+<div style="display:flex;justify-content:space-between;margin-top:8px;font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase"><span>Month 0 · 41</span><span>Month 6 · 128</span></div>
+</div>
+</div>
+
+<div style="display:flex;justify-content:center;padding:10px 8px 4px">
+<div style="width:100%;max-width:290px;transform:rotate(-2deg);filter:drop-shadow(0 18px 18px rgba(11,11,12,.2))">
+<div style="background:#FBFBF9;padding:20px 18px 12px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;line-height:1.75;letter-spacing:.02em">
+<div style="text-align:center;font-weight:600;letter-spacing:.2em;font-size:13px">TECHX®</div>
+<div style="text-align:center;font-size:10px;letter-spacing:.1em;color:#5C5F66">RESULT RECEIPT · NO. 014</div>
+<div style="border-top:1px dashed #9A9CA3;margin:10px 0"></div>
+<div style="display:flex;gap:8px"><span>LOCAL SEO</span><span style="flex:1;border-bottom:1px dotted #9A9CA3;transform:translateY(-6px)"></span><span>DONE</span></div>
+<div style="display:flex;gap:8px"><span>WEB REBUILD</span><span style="flex:1;border-bottom:1px dotted #9A9CA3;transform:translateY(-6px)"></span><span>DONE</span></div>
+<div style="display:flex;gap:8px"><span>GOOGLE ADS</span><span style="flex:1;border-bottom:1px dotted #9A9CA3;transform:translateY(-6px)"></span><span>DONE</span></div>
+<div style="border-top:1px dashed #9A9CA3;margin:10px 0"></div>
+<div style="display:flex;gap:8px"><span>CALLS / MO BEFORE</span><span style="flex:1;border-bottom:1px dotted #9A9CA3;transform:translateY(-6px)"></span><span>41</span></div>
+<div style="display:flex;gap:8px"><span>CALLS / MO AFTER</span><span style="flex:1;border-bottom:1px dotted #9A9CA3;transform:translateY(-6px)"></span><span>128</span></div>
+<div style="display:flex;gap:8px"><span>MAPS RANK</span><span style="flex:1;border-bottom:1px dotted #9A9CA3;transform:translateY(-6px)"></span><span>#14 → #2</span></div>
+<div style="border-top:1px dashed #9A9CA3;margin:10px 0"></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;font-weight:600;font-size:14px"><span>NEW REVENUE</span><span style="color:{{accent}}">$38,400/MO</span></div>
+<div style="text-align:center;font-size:9px;letter-spacing:.2em;margin-top:8px;color:#5C5F66">THANK YOU · WE GOT THE CALL</div>
+</div>
+<svg width="100%" height="12" viewBox="0 0 340 12" preserveAspectRatio="none" style="display:block" aria-hidden="true"><polygon points="0,0 340,0 323,12 306,0 289,12 272,0 255,12 238,0 221,12 204,0 187,12 170,0 153,12 136,0 119,12 102,0 85,12 68,0 51,12 34,0 17,12" fill="#FBFBF9"/></svg>
+</div>
+</div>
+
+<div style="box-sizing:border-box;background:#FFFFFF;border:1px solid #DADCE1;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase">
+<span style="display:flex;align-items:center;gap:8px"><span class="pulse" style="width:8px;height:8px;border-radius:50%;background:{{accent}};display:inline-block"></span>Call tracking / today</span><span style="color:#5C5F66">/014</span>
+</div>
+<div>
+<div style="padding:10px 0;border-top:1px dashed #A9ACB4"><div style="display:flex;justify-content:space-between;align-items:center;font-family:'Geist Mono',ui-monospace,monospace;font-size:12px"><span>09:42 · (214) ***-**18</span><span style="background:#0B0B0C;color:#F7F7F8;border-radius:3px;padding:4px 8px;font-size:10px;letter-spacing:.1em">BOOKED</span></div><div style="font-size:15px;font-weight:500;letter-spacing:-0.01em;margin-top:5px">Roof repair <span style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;color:#5C5F66">· 4:12</span></div></div>
+<div style="padding:10px 0;border-top:1px dashed #A9ACB4"><div style="display:flex;justify-content:space-between;align-items:center;font-family:'Geist Mono',ui-monospace,monospace;font-size:12px"><span>09:31 · (972) ***-**07</span><span style="background:#0B0B0C;color:#F7F7F8;border-radius:3px;padding:4px 8px;font-size:10px;letter-spacing:.1em">BOOKED</span></div><div style="font-size:15px;font-weight:500;letter-spacing:-0.01em;margin-top:5px">Storm damage <span style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;color:#5C5F66">· 6:48</span></div></div>
+<div style="padding:10px 0;border-top:1px dashed #A9ACB4"><div style="display:flex;justify-content:space-between;align-items:center;font-family:'Geist Mono',ui-monospace,monospace;font-size:12px"><span>09:12 · (469) ***-**33</span><span style="border:1px solid #0B0B0C;border-radius:3px;padding:3px 7px;font-size:10px;letter-spacing:.1em">QUOTED</span></div><div style="font-size:15px;font-weight:500;letter-spacing:-0.01em;margin-top:5px">Free estimate <span style="font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;color:#5C5F66">· 2:05</span></div></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;border-top:1px solid #0B0B0C;padding-top:14px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase"><span>24 calls today</span><span>17 booked</span><span style="color:{{accent}};font-weight:600">71% close rate</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px;border-top:1px dashed #A9ACB4;padding-top:18px">
+<a href="#industries" style="min-height:48px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:10px;border:1px solid #0B0B0C;border-radius:4px;padding:0 20px;font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none">See your industry
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FF4D00","options":["#FF4D00","#1F3BFF","#0F7B5F"]},"$preview":{"width":390,"height":1400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#FF4D00' };
+  }
+}
+</script>
+</body>
+</html>

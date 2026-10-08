@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --accent: #ff4d00;
+  --page: #f7f7f8;
+  --panel: #edeef1;
+  --ink: #0b0b0c;
+  --paper: #fbfbf9;
+  --text-strong: #1b1c1f;
+  --text-body: #3a3c42;
+  --text-muted: #4b4e55;
+  --text-subtle: #5c5f66;
+  --text-faint: #8d9098;
+  --line-card: #dadce1;
+  --line-dashed: #a9acb4;
+  --line-pipe: #8d9098;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-page: var(--page);
+  --color-panel: var(--panel);
+  --color-ink: var(--ink);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: light;
+  scrollbar-gutter: stable;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--panel);
+  font-family: var(--font-geist-sans), "Helvetica Neue", system-ui, sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+  a { color: var(--ink); }
+  a:hover { color: var(--accent); }
+  footer a { color: #f7f7f8; }
+}
+@layer base {
+  input, select, button { font-family: var(--font-geist-mono), ui-monospace, monospace; }
+}
+input::placeholder { color: #6b6e75; opacity: 1; }
+
+@layer base {
+  a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible {
+    outline: 2px solid #0b0b0c;
+    outline-offset: 4px;
+  }
+  footer a:focus-visible { outline-color: #f7f7f8; }
+}
+@media (max-width: 767px) {
+  @layer base {
+    a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible { outline-offset: 3px; }
+  }
+}
+
+/* design keyframes */
+@keyframes blink { 50% { opacity: 0.15; } }
+@keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes travel {
+  0% { left: 0; opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { left: calc(100% - 9px); opacity: 0; }
+}
+.pulse { animation: blink 1.4s steps(1) infinite; }
+.marq { animation: slide 38s linear infinite; }
+.dot { animation: travel 7s linear infinite; }
+@media (max-width: 760px) {
+  .co { display: none !important; }
+  .pipe-line { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse, .marq { animation: none; }
+  .dot { animation: none; opacity: 0; }
+}
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+/* ───────── inner-page loops (CSS only; calm, honour reduced motion) ───────── */
+@keyframes orbit { to { transform: rotate(360deg); } }
+@keyframes orbit-r { to { transform: rotate(-360deg); } }
+@keyframes mqx { to { transform: translateX(-50%); } }
+@keyframes mqy { to { transform: translateY(-50%); } }
+@keyframes pingx { 0% { transform: scale(.3); opacity: .8; } 100% { transform: scale(1.7); opacity: 0; } }
+@keyframes radar { 0% { transform: scale(.2); opacity: .75; } 100% { transform: scale(1); opacity: 0; } }
+@keyframes dashflow { to { stroke-dashoffset: -24; } }
+@keyframes mk-sw { from { transform: translate(-4px, 3px); } }
+@keyframes mk-bob { from { transform: translateY(3px); } }
+@keyframes mk-ln { from { transform: scaleX(.35); } }
+@keyframes mk-dt { from { opacity: .15; } }
+@keyframes mk-sp { from { transform: scale(.78); } }
+@keyframes mk-bar { from { transform: scaleY(.3); } }
+@keyframes mk-bt { from { transform: scale(.88); } }
+.mk-g * { transform-box: fill-box; transform-origin: center; }
+.a-orbit { animation: orbit var(--d, 70s) linear infinite; }
+.a-orbit-r { animation: orbit-r var(--d, 70s) linear infinite; }
+.a-mqx { animation: mqx var(--d, 70s) linear infinite; }
+.a-ping { animation: pingx 2.6s ease-out infinite; }
+.mk-radar { animation: radar 4.4s ease-out infinite; }
+.a-dash { animation: dashflow 1s linear infinite; }
+.mk-sw { animation: mk-sw 2.2s ease-in-out infinite alternate; }
+.mk-bob { animation: mk-bob 1.6s ease-in-out infinite alternate; }
+.mk-ln { transform-origin: left center !important; animation: mk-ln 1.8s ease-in-out infinite alternate; }
+.mk-dt { animation: mk-dt .9s ease-in-out infinite alternate; }
+.mk-sp { animation: mk-sp 2s ease-in-out infinite alternate; }
+.mk-sp2 { animation: orbit 14s linear infinite; }
+.mk-bar { transform-origin: center bottom !important; animation: mk-bar 1.8s ease-in-out infinite alternate; }
+.mk-bt { animation: mk-bt 1.4s ease-in-out infinite alternate; }
+.mk-ring:hover, .mk-ring:hover * { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .mk-radar, .a-orbit, .a-orbit-r, .a-mqx, .a-ping, .a-dash, .mk-sw, .mk-bob, .mk-ln, .mk-dt, .mk-sp, .mk-sp2, .mk-bar, .mk-bt { animation: none !important; }
 }

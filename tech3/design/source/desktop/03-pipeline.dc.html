@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TechX Media — Pipeline section</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Geist','Helvetica Neue',system-ui,sans-serif;color:#0B0B0C;-webkit-font-smoothing:antialiased}
+a{color:#0B0B0C}a:hover{color:#FF4D00}
+a:focus-visible{outline:2px solid #0B0B0C;outline-offset:4px}
+@keyframes travel{0%{left:0;opacity:0}8%{opacity:1}92%{opacity:1}100%{left:calc(100% - 9px);opacity:0}}
+.dot{animation:travel 7s linear infinite}
+@media (prefers-reduced-motion:reduce){.dot{animation:none;opacity:0}}
+@media (max-width:760px){.pipe-line{display:none!important}}
+</style>
+</helmet>
+
+<div style="box-sizing:border-box;width:100%;padding:16px;background:#F7F7F8">
+<div style="box-sizing:border-box;background:#EDEEF1;border-radius:20px;padding:48px 40px 44px;display:flex;flex-direction:column;gap:52px">
+
+<div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px">
+<div>
+<div style="display:flex;align-items:center;gap:14px;font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase">
+<span>S/003</span><span style="width:40px;border-top:1px dashed #0B0B0C"></span><span>The pipeline</span>
+</div>
+<h2 style="margin:22px 0 0;font-size:clamp(44px,5.8vw,92px);line-height:.92;font-weight:600;letter-spacing:-0.06em">
+<span style="display:block">From search to</span>
+<span style="display:block">ringing phone<span style="color:{{accent}}">.</span></span>
+</h2>
+</div>
+<p style="margin:0;max-width:360px;font-size:16px;line-height:1.5;color:#3A3C42">Four steps. Everything we sell fits one of them. If it doesn't make the phone ring, we don't do it.</p>
+</div>
+
+<div style="position:relative">
+<div class="pipe-line" style="position:absolute;top:8px;left:8px;right:0;border-top:1px dashed #8D9098">
+<span class="dot" style="position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:{{accent}}"></span>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:40px 32px">
+
+<div style="flex:1 1 220px;min-width:0;position:relative">
+<span style="display:block;width:16px;height:16px;border-radius:50%;background:{{accent}};box-shadow:0 0 0 8px #EDEEF1;position:relative"></span>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-top:30px;font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.1em">
+<span>S/001</span>
+<span style="width:44px;height:44px;border-radius:10px;background:#FFFFFF;border:1px solid #DADCE1;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0B0C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.5-6-10a6 6 0 1112 0c0 4.5-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span>
+</div>
+<div style="margin-top:14px;font-size:clamp(52px,5.8vw,92px);line-height:.9;font-weight:600;letter-spacing:-0.07em">Found<span style="color:{{accent}}">.</span></div>
+<p style="margin:14px 0 0;max-width:250px;font-size:15px;line-height:1.45;color:#3A3C42">Climb the map when Dallas searches.</p>
+<a href="#services" style="display:inline-block;margin-top:16px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid #0B0B0C;padding-bottom:3px">Marketing ↓</a>
+</div>
+
+<div style="flex:1 1 220px;min-width:0;position:relative">
+<span style="display:block;width:16px;height:16px;border-radius:50%;background:{{accent}};box-shadow:0 0 0 8px #EDEEF1;position:relative"></span>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-top:30px;font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.1em">
+<span>S/002</span>
+<span style="width:44px;height:44px;border-radius:10px;background:#FFFFFF;border:1px solid #DADCE1;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0B0C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M8.5 14l2.5 2.5 4.5-4.5"/></svg></span>
+</div>
+<div style="margin-top:14px;font-size:clamp(52px,5.8vw,92px);line-height:.9;font-weight:600;letter-spacing:-0.07em">Chosen<span style="color:{{accent}}">.</span></div>
+<p style="margin:14px 0 0;max-width:250px;font-size:15px;line-height:1.45;color:#3A3C42">A fast site that makes you the obvious pick.</p>
+<a href="#services" style="display:inline-block;margin-top:16px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid #0B0B0C;padding-bottom:3px">Web design ↓</a>
+</div>
+
+<div style="flex:1 1 220px;min-width:0;position:relative">
+<span style="display:block;width:16px;height:16px;border-radius:50%;background:{{accent}};box-shadow:0 0 0 8px #EDEEF1;position:relative"></span>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-top:30px;font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.1em">
+<span>S/003</span>
+<span style="width:44px;height:44px;border-radius:10px;background:#FFFFFF;border:1px solid #DADCE1;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="#0B0B0C" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2h3l1.5 3.5-2 1.2a8 8 0 003.8 3.8l1.2-2L14 10v3a1 1 0 01-1 1A11 11 0 012 3a1 1 0 011-1z"/></svg></span>
+</div>
+<div style="margin-top:14px;font-size:clamp(52px,5.8vw,92px);line-height:.9;font-weight:600;letter-spacing:-0.07em">Called<span style="color:{{accent}}">.</span></div>
+<p style="margin:14px 0 0;max-width:250px;font-size:15px;line-height:1.45;color:#3A3C42">Ads that ring the phone, not just get clicks.</p>
+<a href="#services" style="display:inline-block;margin-top:16px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid #0B0B0C;padding-bottom:3px">Ads &amp; PPC ↓</a>
+</div>
+
+<div style="flex:1 1 220px;min-width:0;position:relative">
+<span style="display:block;width:16px;height:16px;border-radius:50%;background:{{accent}};box-shadow:0 0 0 8px #EDEEF1;position:relative"></span>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-top:30px;font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.1em">
+<span>S/004</span>
+<span style="width:44px;height:44px;border-radius:10px;background:#FFFFFF;border:1px solid #DADCE1;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B0B0C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20v-6M12 20V5M19 20v-10M3 20h18"/></svg></span>
+</div>
+<div style="margin-top:14px;font-size:clamp(52px,5.8vw,92px);line-height:.9;font-weight:600;letter-spacing:-0.07em">Tracked<span style="color:{{accent}}">.</span></div>
+<p style="margin:14px 0 0;max-width:250px;font-size:15px;line-height:1.45;color:#3A3C42">Every call counted. A plain-English report monthly.</p>
+<a href="#services" style="display:inline-block;margin-top:16px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid #0B0B0C;padding-bottom:3px">Tracking ↓</a>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FF4D00","options":["#FF4D00","#1F3BFF","#0F7B5F"]},"$preview":{"width":1440,"height":720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#FF4D00' };
+  }
+}
+</script>
+</body>
+</html>

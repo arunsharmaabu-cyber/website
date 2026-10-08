@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TechX Media — Nav menu open</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Geist','Helvetica Neue',system-ui,sans-serif;color:#0B0B0C;-webkit-font-smoothing:antialiased}
+a{color:#0B0B0C}a:hover{color:#FF4D00}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #0B0B0C;outline-offset:3px}
+footer a{color:#F7F7F8}
+button{font-family:'Geist Mono',ui-monospace,monospace}
+summary{list-style:none;cursor:pointer}summary::-webkit-details-marker{display:none}
+details[open] .plus{transform:rotate(45deg)}
+.plus{transition:transform .2s}
+@keyframes blink{50%{opacity:.15}}
+.pulse{animation:blink 1.4s steps(1) infinite}
+@media (prefers-reduced-motion:reduce){.pulse{animation:none}}
+
+@keyframes mqx{to{transform:translateX(-50%)}}
+@keyframes mqy{to{transform:translateY(-50%)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes spinr{to{transform:rotate(-360deg)}}
+@keyframes flt{50%{transform:translateY(-10px)}}
+@keyframes ping{0%{transform:scale(.3);opacity:.8}100%{transform:scale(1.7);opacity:0}}
+@keyframes dashflow{to{stroke-dashoffset:-24}}
+@keyframes caret{50%{opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+@keyframes drawln{from{stroke-dashoffset:var(--len,600)}}
+@keyframes growx{from{transform:scaleX(0)}}
+@keyframes growy{from{transform:scaleY(0)}}
+@keyframes pop{from{opacity:0;transform:scale(.6)}}
+@property --n{syntax:'<integer>';initial-value:0;inherits:false}
+@keyframes count{from{--n:0}}
+.cnt{counter-reset:n var(--n);animation:count 2.4s cubic-bezier(.2,.7,.2,1) both}
+.cnt::after{content:counter(n)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+</style>
+</helmet>
+
+<div id="top" style="box-sizing:border-box;width:100%;padding:16px;background:#F7F7F8;display:flex;flex-direction:column;gap:16px">
+<section style="box-sizing:border-box;background:#EDEEF1;border-radius:20px;padding:28px 40px 40px;display:flex;flex-direction:column;gap:24px;">
+<nav style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding-bottom:22px;border-bottom:1px dashed #A9ACB4">
+<a href="/" style="font-size:19px;font-weight:600;letter-spacing:.14em;text-decoration:none">TECHX<span style="font-size:11px;vertical-align:top;margin-left:2px">®</span></a>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 40px;font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase">
+<a href="/services" style="text-decoration:none;display:inline-flex;align-items:center;">Services<svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="#0B0B0C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:6px"><path d="M1 1l4 4 4-4"/></svg></a>
+<a href="/about" style="text-decoration:none;">About</a>
+<a href="/contact" style="text-decoration:none;">Contact</a>
+</div>
+<div style="display:flex;align-items:center;gap:28px;font-family:'Geist Mono',ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase">
+<a href="tel:+12140000000" style="text-decoration:none">(214) 000-0000</a>
+<a href="#audit" style="display:flex;align-items:center;gap:10px;border:1px solid #0B0B0C;border-radius:4px;padding:11px 18px;font-weight:500;letter-spacing:.1em;text-decoration:none">Get audit<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+</div>
+</nav><div style="box-sizing:border-box;background:#FFFFFF;border:1px solid #DADCE1;border-radius:16px;padding:20px;display:flex;flex-wrap:wrap;gap:24px 32px;box-shadow:0 30px 50px -30px rgba(11,11,12,.35)"><div style="flex:0 1 300px;min-width:0;display:flex;flex-direction:column;gap:4px"><a href="#" style="display:flex;align-items:center;gap:16px;padding:18px 18px;border-radius:10px;text-decoration:none;background:#EDEEF1"><span style="width:44px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em">S/001</span><span style="flex:1;font-size:24px;font-weight:600;letter-spacing:-0.035em">Marketing</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a><a href="#" style="display:flex;align-items:center;gap:16px;padding:18px 18px;border-radius:10px;text-decoration:none;"><span style="width:44px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em">S/002</span><span style="flex:1;font-size:24px;font-weight:600;letter-spacing:-0.035em">Web design</span></a><a href="#" style="display:flex;align-items:center;gap:16px;padding:18px 18px;border-radius:10px;text-decoration:none;"><span style="width:44px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em">S/003</span><span style="flex:1;font-size:24px;font-weight:600;letter-spacing:-0.035em">Consulting</span></a><div style="margin-top:14px;padding:0 18px;font-size:14px;line-height:1.45;color:#5C5F66;max-width:260px">Seven ways to get found, trusted and called. One page for web design. One for consulting.</div></div><div style="flex:1.7 1 520px;min-width:0"><div style="font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#5C5F66;padding:4px 0 12px">Inside Marketing / 7 pages</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:0 28px;border-bottom:1px dashed #A9ACB4"><a href="#" style="display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-top:1px dashed #A9ACB4;text-decoration:none;min-width:0"><span style="width:52px;flex:none;font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:{{accent}};font-weight:600;padding-top:5px">S/001.1</span><span style="flex:1;min-width:0"><span style="display:block;font-size:18px;font-weight:600;letter-spacing:-0.03em;white-space:nowrap">SEO</span><span style="display:block;font-size:13px;color:#5C5F66;margin-top:2px">Rank higher on Google</span></span></a><a href="#" style="display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-top:1px dashed #A9ACB4;text-decoration:none;min-width:0"><span style="width:52px;flex:none;font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:{{accent}};font-weight:600;padding-top:5px">S/001.2</span><span style="flex:1;min-width:0"><span style="display:block;font-size:18px;font-weight:600;letter-spacing:-0.03em;white-space:nowrap">Local SEO</span><span style="display:block;font-size:13px;color:#5C5F66;margin-top:2px">Own the map pack</span></span></a><a href="#" style="display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-top:1px dashed #A9ACB4;text-decoration:none;min-width:0"><span style="width:52px;flex:none;font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:{{accent}};font-weight:600;padding-top:5px">S/001.3</span><span style="flex:1;min-width:0"><span style="display:block;font-size:18px;font-weight:600;letter-spacing:-0.03em;white-space:nowrap">Content marketing</span><span style="display:block;font-size:13px;color:#5C5F66;margin-top:2px">Guides, pages and posts</span></span></a><a href="#" style="display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-top:1px dashed #A9ACB4;text-decoration:none;min-width:0"><span style="width:52px;flex:none;font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:{{accent}};font-weight:600;padding-top:5px">S/001.4</span><span style="flex:1;min-width:0"><span style="display:block;font-size:18px;font-weight:600;letter-spacing:-0.03em;white-space:nowrap">GEO</span><span style="display:block;font-size:13px;color:#5C5F66;margin-top:2px">Get cited by ChatGPT and more</span></span></a><a href="#" style="display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-top:1px dashed #A9ACB4;text-decoration:none;min-width:0"><span style="width:52px;flex:none;font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:{{accent}};font-weight:600;padding-top:5px">S/001.5</span><span style="flex:1;min-width:0"><span style="display:block;font-size:18px;font-weight:600;letter-spacing:-0.03em;white-space:nowrap">AI search optimization</span><span style="display:block;font-size:13px;color:#5C5F66;margin-top:2px">Win AI Overviews</span></span></a><a href="#" style="display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-top:1px dashed #A9ACB4;text-decoration:none;min-width:0"><span style="width:52px;flex:none;font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:{{accent}};font-weight:600;padding-top:5px">S/001.6</span><span style="flex:1;min-width:0"><span style="display:block;font-size:18px;font-weight:600;letter-spacing:-0.03em;white-space:nowrap">Paid advertising & PPC</span><span style="display:block;font-size:13px;color:#5C5F66;margin-top:2px">Ads that ring the phone</span></span></a><a href="#" style="display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-top:1px dashed #A9ACB4;text-decoration:none;min-width:0"><span style="width:52px;flex:none;font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:{{accent}};font-weight:600;padding-top:5px">S/001.7</span><span style="flex:1;min-width:0"><span style="display:block;font-size:18px;font-weight:600;letter-spacing:-0.03em;white-space:nowrap">Social media marketing</span><span style="display:block;font-size:13px;color:#5C5F66;margin-top:2px">Posts that bring customers</span></span></a><a href="#" style="display:flex;align-items:center;gap:10px;padding:13px 0;border-top:1px dashed #A9ACB4;text-decoration:none;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase">All marketing<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></div></div><div style="flex:0 1 280px;min-width:0"><div style="box-sizing:border-box;height:100%;background:{{accent}};border-radius:14px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;gap:28px"><span style="font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase">Free / 24h</span><div style="font-size:34px;line-height:.95;font-weight:600;letter-spacing:-0.055em">Find out what's costing you calls.</div><span style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;background:#0B0B0C;color:#F7F7F8;border-radius:4px;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase">Get my free audit<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="{{accent}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></span></div></div></div><div style="font-family:'Geist Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#5C5F66">Menu state · Services dropdown open (hover or click on desktop)</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FF4D00","options":["#FF4D00","#1F3BFF","#0F7B5F"]},"$preview":{"width":1440,"height":760}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#FF4D00' };
+  }
+}
+</script>
+</body>
+</html>
