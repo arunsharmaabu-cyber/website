@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { useServicesPin } from "@/components/motion/use-services-pin";
+import Image from "next/image";
 import ArrowSVG from "@/components/ui/arrow-svg";
 
 // ───────── Copy for this section: edit the words here ─────────
@@ -25,14 +26,7 @@ const CARDS = [
     line: "border-[#A9ACB4]",
     tagColor: "text-[#5C5F66]",
     shadow: "shadow-[0_-10px_24px_-18px_rgba(11,11,12,.35)] md:shadow-[0_-14px_30px_-20px_rgba(11,11,12,.35)]",
-    glyph: (
-      <svg viewBox="0 0 104 120" className="h-full max-h-[120px] w-auto" fill="#0B0B0C" aria-hidden="true">
-        <rect x="0" y="70" width="16" height="50" />
-        <rect x="26" y="52" width="16" height="68" />
-        <rect x="52" y="34" width="16" height="86" />
-        <rect x="78" y="14" width="16" height="106" />
-      </svg>
-    ),
+    image: { src: "/social/service1.png", w: 1269, h: 1240, alt: "Marketing, a team reviewing results" },
   },
   {
     id: "web",
@@ -48,12 +42,7 @@ const CARDS = [
     line: "border-[#9A9DA6]",
     tagColor: "text-[#4B4E55]",
     shadow: "shadow-[0_-10px_24px_-18px_rgba(11,11,12,.35)] md:shadow-[0_-14px_30px_-20px_rgba(11,11,12,.35)]",
-    glyph: (
-      <svg viewBox="0 0 140 90" className="h-full max-h-[90px] w-auto" fill="#0B0B0C" aria-hidden="true">
-        <path d="M0 0h42v90H0z" />
-        <path d="M54 0h36l50 90h-36z" />
-      </svg>
-    ),
+    image: { src: "/social/service2.png", w: 1200, h: 673, alt: "Web design, a finished website" },
   },
   {
     id: "consulting",
@@ -69,13 +58,7 @@ const CARDS = [
     line: "border-[#8A8D95]",
     tagColor: "text-[#D3D5DB]",
     shadow: "shadow-[0_-10px_24px_-18px_rgba(11,11,12,.45)] md:shadow-[0_-14px_30px_-20px_rgba(11,11,12,.45)]",
-    glyph: (
-      <svg viewBox="0 0 120 120" className="h-full max-h-[120px] w-auto" aria-hidden="true">
-        <circle cx="60" cy="60" r="56" fill="none" stroke="#0B0B0C" strokeWidth="8" />
-        <circle cx="60" cy="60" r="34" fill="none" stroke="#0B0B0C" strokeWidth="8" />
-        <circle cx="60" cy="60" r="12" fill="#0B0B0C" />
-      </svg>
-    ),
+    image: { src: "/social/service3.png", w: 840, h: 1200, alt: "Consulting, a strategy session" },
   },
 ];
 
@@ -151,9 +134,9 @@ export default function Services() {
                     </div>
                   </div>
 
-                  {/* simple tile with one black shape */}
-                  <div className="flex min-h-[110px] flex-1 items-end justify-center overflow-hidden rounded-[14px] bg-panel px-6 pt-6 md:flex-[1_1_0%] md:px-0 md:pt-10">
-                    {c.glyph}
+                  {/* the card picture */}
+                  <div className="relative min-h-[110px] flex-1 overflow-hidden rounded-[14px] bg-panel md:flex-[1_1_0%]">
+                    <Image src={c.image.src} alt={c.image.alt} width={c.image.w} height={c.image.h} sizes="(min-width: 768px) 45vw, 90vw" className="absolute inset-0 size-full object-cover" />
                   </div>
                 </div>
               </article>

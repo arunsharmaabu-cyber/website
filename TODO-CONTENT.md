@@ -32,8 +32,6 @@ Everything here is visible on the site as a placeholder. Search the file named i
 ## Contact + FAQ page (`/contact`, FAQ at `/contact#faq`)
 | Placeholder | File |
 |---|---|
-| Phone, `[EMAIL]`, `[ADDRESS]`, `[HOURS]`, "Placeholder contact details · confirm with founder" | `components/sections/contact/contact-hero.tsx` |
-| "Book a 15-minute call" currently calls the phone number; replace `BOOK_CALL.href` with a Calendly / Cal.com link | `components/sections/contact/contact-hero.tsx` |
 | Form is static (no submit yet) | `components/sections/contact/audit-form.tsx` |
 | All 8 FAQ answers are DRAFT, `[PRICE]` in "How much does it cost?" | `components/sections/contact/faq.tsx` |
 
@@ -73,6 +71,44 @@ Everything here is visible on the site as a placeholder. Search the file named i
 |---|---|
 | Sample map, search and result card (Your Business, 4.9) | `components/sections/local-seo/local-hero.tsx` |
 | Sample report: calls per month, directions 214, visits 1,380, reviews 18 | `your-report.tsx` |
+| Draft FAQ answers (last three) | `faq.tsx` |
+
+## Content marketing page (`/marketing/content-marketing`)
+| Placeholder | File |
+|---|---|
+| Sample titles, sticky notes and the status line in the hero | `components/sections/content/content-hero.tsx` |
+| Draft one-liners in the four kinds and the four weeks | `four-kinds.tsx`, `how-it-runs.tsx` |
+| Draft FAQ answers (last three) | `faq.tsx` |
+
+## GEO page (`/marketing/geo`)
+| Placeholder | File |
+|---|---|
+| Sample AI answer, business name, ratings and the background-photo placeholder | `components/sections/geo/geo-hero.tsx` |
+| Sample "named" percentages (62%, tool bars) | `named-more.tsx` |
+| Draft FAQ answers (last three) | `faq.tsx` |
+
+## AI search optimization page (`/marketing/ai-search-optimization`)
+| Placeholder | File |
+|---|---|
+| Sample quote, business card in the hero | `components/sections/ai-search/ai-hero.tsx` |
+| Sample page mock (price range, address, phone) | `easy-to-quote.tsx` |
+| Sample quoted answers and the 29 total | `quoted-more.tsx` |
+| Draft FAQ answers (last three) | `faq.tsx` |
+
+## Paid advertising & PPC page (`/marketing/paid-advertising-ppc`)
+| Placeholder | File |
+|---|---|
+| Sample ad statement (12,400 / 54 calls / $38) and notifications | `components/sections/ppc/ppc-hero.tsx` |
+| Sample searches, Local Services card, banner placeholder (replace with a real banner) | `three-ways.tsx` |
+| Sample cost-per-call chart and stats | `every-dollar.tsx` |
+| Ad spend range ($1,500–$3,000) and draft FAQ answers | `faq.tsx` |
+
+## Social media marketing page (`/marketing/social-media-marketing`)
+| Placeholder | File |
+|---|---|
+| Hero photo is `public/social/image1.png` (swap the file or the path to change it) | `components/sections/social/social-hero.tsx` |
+| Four tiles per row: two real photos each (`public/social/image2-5.png`), the rest are placeholders to fill (add `src` on a tile) | `what-we-post.tsx` |
+| Sample October calendar and stats | `your-month.tsx` |
 | Draft FAQ answers (last three) | `faq.tsx` |
 
 ## Not built yet

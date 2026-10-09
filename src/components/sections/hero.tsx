@@ -1,5 +1,4 @@
 import Image from "next/image";
-import FieldRow from "@/components/ui/field-row";
 import SolidButton from "@/components/ui/solid-button";
 
 // ───────── Copy for this section: edit the words here ─────────
@@ -25,9 +24,15 @@ const H1_LINE_2B = "it sees";
 const SUBLINE = "We make sure that name is yours.";
 const PARAGRAPH = "SEO, web design, paid ads & local growth systems built to get your business seen first in DFW.";
 
-const FORM_TITLE = "Free local growth audit / 24h";
-const FORM_INTRO = "See exactly what's keeping your business from being found, and how to fix it.";
-const INDUSTRIES = ["Roofing", "HVAC", "Plumbing", "Dental", "Law firm", "Other"];
+const FORM_TITLE = "Free audit";
+// The dashed line under each field IS the input: type right on top of it.
+const FIELD_CLS =
+  "block w-full border-0 border-b border-dashed border-[#A9ACB4] bg-transparent px-0 pb-2.5 pt-1.5 text-[16px] text-ink outline-none transition-colors focus:border-solid focus:border-ink";
+const FORM_FIELDS = [
+  { id: "website", label: "Website", type: "text", autoComplete: "url" },
+  { id: "industry", label: "Industry", type: "text", autoComplete: "off" },
+  { id: "phone", label: "Phone", type: "tel", autoComplete: "tel" },
+];
 const SUBMIT = "Get my free audit";
 
 // ───────── Small local pieces (no copy of their own) ─────────
@@ -224,44 +229,20 @@ export default function Hero() {
             className="mt-8 min-w-0 border-t border-ink pt-6 md:mt-[clamp(8px,3vh,32px)] md:max-w-[520px] md:flex-[1_1_0%] md:self-start md:border-t-0 md:pt-0"
           >
             <div className="mb-[14px] h-[3px] w-7 bg-accent md:mb-[18px]" />
-            <h2 className="m-0 font-mono text-[14px] font-medium uppercase leading-[1.4] tracking-[.08em] md:text-[15px] md:leading-normal">
+            <h2 className="mb-5 m-0 font-mono text-[14px] font-medium uppercase leading-[1.4] tracking-[.08em] md:mb-[26px] md:text-[15px] md:leading-normal">
               {FORM_TITLE}
             </h2>
-            <p className="mb-5 mt-[10px] text-[15px] leading-normal text-[#4B4E55] md:mb-[26px] md:mt-3 md:max-w-[380px] md:text-[16px]">
-              {FORM_INTRO}
-            </p>
 
-            <FieldRow htmlFor="website" label="Website" first py="py-4 md:py-[clamp(14px,2.4vh,22px)]">
-              <input
-                id="website"
-                type="text"
-                placeholder="yourco.com"
-                className="min-w-0 flex-1 border-0 bg-transparent p-0 text-right text-[14px] text-ink"
-              />
-            </FieldRow>
-            <FieldRow htmlFor="industry" label="Industry" py="py-4 md:py-[clamp(14px,2.4vh,22px)]">
-              <span className="flex flex-1 items-center justify-end gap-2">
-                <select
-                  id="industry"
-                  className="cursor-pointer appearance-none border-0 bg-transparent p-0 text-right text-[14px] uppercase tracking-[.04em] text-ink [text-align-last:right]"
-                >
-                  {INDUSTRIES.map((i) => (
-                    <option key={i}>{i}</option>
-                  ))}
-                </select>
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="#0B0B0C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M1 1l4 4 4-4" />
-                </svg>
-              </span>
-            </FieldRow>
-            <FieldRow htmlFor="phone" label="Phone" py="py-4 md:py-[clamp(14px,2.4vh,22px)]">
-              <input
-                id="phone"
-                type="tel"
-                placeholder="(214) 000-0000"
-                className="min-w-0 flex-1 border-0 bg-transparent p-0 text-right text-[14px] text-ink"
-              />
-            </FieldRow>
+            <div className="flex flex-col gap-4 md:gap-[clamp(12px,2.4vh,22px)]">
+              {FORM_FIELDS.map((f) => (
+                <div key={f.id}>
+                  <label htmlFor={f.id} className="block font-mono text-[11px] uppercase tracking-[.1em] text-[#5C5F66]">
+                    {f.label}
+                  </label>
+                  <input id={f.id} name={f.id} type={f.type} autoComplete={f.autoComplete} className={FIELD_CLS} />
+                </div>
+              ))}
+            </div>
 
             <SolidButton type="button" className="mt-[22px] h-14 md:mt-7 md:h-[58px]">
               {SUBMIT}

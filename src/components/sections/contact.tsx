@@ -19,7 +19,7 @@ const SUBMIT = "Send my free audit";
 // ───────── Small local pieces ─────────
 // The dashed line under each field IS the input: type right on top of it.
 const fieldCls =
-  "block w-full border-0 border-b border-dashed border-[#A9ACB4] bg-transparent px-0 pb-3 pt-2 text-[17px] text-ink outline-none transition-colors placeholder:text-[#8D9098] focus:border-solid focus:border-ink";
+  "block w-full border-0 border-b border-dashed border-[#A9ACB4] bg-transparent px-0 pb-3 pt-2 text-[17px] text-ink outline-none transition-colors focus:border-solid focus:border-ink";
 
 function Field({
   id,
@@ -59,11 +59,11 @@ export default function Contact() {
         {/* RIGHT: form */}
         <form onSubmit={(e) => e.preventDefault()} className="m-0 flex w-full flex-col gap-7 md:max-w-[600px] md:flex-[1.1_1_0%] md:gap-[clamp(20px,3.6vh,32px)]">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2 md:gap-y-[clamp(16px,3vh,28px)]">
-            <Field id="c-name" label="Your name" type="text" placeholder="Jane Smith" autoComplete="name" />
-            <Field id="c-email" label="Email" type="email" placeholder="you@yourco.com" autoComplete="email" />
-            <Field id="c-site" label="Website" type="text" placeholder="yourco.com" autoComplete="url" />
-            <Field id="c-phone" label="Phone" type="tel" placeholder="(214) 000-0000" autoComplete="tel" />
-            <Field id="c-industry" label="Industry" type="text" placeholder="Roofing, HVAC, dental…" className="md:col-span-2" />
+            <Field id="c-name" label="Your name" type="text" autoComplete="name" />
+            <Field id="c-email" label="Email" type="email" autoComplete="email" />
+            <Field id="c-site" label="Website" type="text" autoComplete="url" />
+            <Field id="c-phone" label="Phone" type="tel" autoComplete="tel" />
+            <Field id="c-industry" label="Industry" type="text" className="md:col-span-2" />
           </div>
 
           {/* live speed score (static SAMPLE until the PageSpeed route is wired) */}

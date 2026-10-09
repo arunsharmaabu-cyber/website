@@ -1,10 +1,8 @@
 import ArrowSVG from "@/components/ui/arrow-svg";
 import MaskLines from "@/components/ui/mask-lines";
 import OutlineButton from "@/components/ui/outline-button";
-import SectionLabel from "@/components/ui/section-label";
 
 // ───────── Copy for this section: edit the words here ─────────
-const LABEL = { n: "S/001", name: "Marketing" };
 const HEADING = ["Seven ways", "to be found"];
 const INTRO = "Pick the way that fits your business. Start with one, add the next when the first is working.";
 const PRIMARY = { label: "Get my free audit", href: "/contact#audit" };
@@ -38,7 +36,6 @@ export default function MarketingHero() {
     <section className="relative box-border w-full overflow-hidden bg-panel px-5 pb-14 pt-[104px] md:px-10 md:pb-[clamp(48px,8vh,88px)] md:pt-[clamp(112px,15vh,160px)]">
       <div className="relative flex flex-col gap-10 md:grid md:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] md:items-center md:gap-6">
         <div className="relative flex min-w-0 flex-col gap-[22px] md:gap-[30px]">
-          <SectionLabel number={LABEL.n} name={LABEL.name} />
           <h1 className="m-0 text-[56px] font-semibold leading-[.9] tracking-[-0.06em] md:text-[clamp(64px,8vw,116px)]">
             <MaskLines lines={HEADING} accent />
           </h1>

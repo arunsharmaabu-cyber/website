@@ -120,3 +120,18 @@ html.lenis, html.lenis body { height: auto; }
 @media (prefers-reduced-motion: reduce) {
   .mk-radar, .a-orbit, .a-orbit-r, .a-mqx, .a-ping, .a-dash, .mk-sw, .mk-bob, .mk-ln, .mk-dt, .mk-sp, .mk-sp2, .mk-bar, .mk-bt { animation: none !important; }
 }
+
+/* ───────── ai-search / pages 5–7 loops (CSS only) ───────── */
+@keyframes wavebar { 0%, 100% { transform: scaleY(.3); } 50% { transform: scaleY(1); } }
+@keyframes ringout { 0% { transform: scale(.82); opacity: .8; } 100% { transform: scale(1.25); opacity: 0; } }
+.a-wave { animation: wavebar 1.2s ease-in-out infinite; transform-origin: center; }
+.a-ringout { animation: ringout 4s ease-out infinite; }
+@media (prefers-reduced-motion: reduce) { .a-wave, .a-ringout { animation: none !important; } }
+.a-mqx-r { animation: mqx var(--d, 90s) linear infinite reverse; }
+@media (prefers-reduced-motion: reduce) { .a-mqx-r { animation: none !important; } }
+
+/* three copies of the track: slide by one copy (a third) so the loop has no gap */
+@keyframes mq3 { to { transform: translateX(-33.3333%); } }
+.a-mq3 { animation: mq3 var(--d, 60s) linear infinite; }
+.a-mq3-r { animation: mq3 var(--d, 60s) linear infinite reverse; }
+@media (prefers-reduced-motion: reduce) { .a-mq3, .a-mq3-r { animation: none !important; } }

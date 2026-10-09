@@ -63,7 +63,7 @@ export default function PageReveal({ children, className = "" }: { children: Rea
         // signature
         root.querySelectorAll<SVGPathElement>("[data-draw]").forEach((p) => {
           const len = p.getTotalLength();
-          gsap.fromTo(p, { strokeDasharray: len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: 1.4, ease: "power1.inOut", scrollTrigger: { trigger: p.ownerSVGElement ?? p, ...once } });
+          gsap.fromTo(p, { strokeDasharray: len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: 1.4, ease: "power1.inOut", onComplete: () => { gsap.set(p, { clearProps: "strokeDasharray,strokeDashoffset" }); }, scrollTrigger: { trigger: p.ownerSVGElement ?? p, ...once } });
         });
 
         document.fonts?.ready.then(() => ScrollTrigger.refresh());
