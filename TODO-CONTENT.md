@@ -1,115 +1,119 @@
-# TODO-CONTENT — placeholders to replace before launch
-
-Everything here is visible on the site as a placeholder. Search the file named in each row for the words.
-
-## Contact details (footer, header, Contact)
-| Placeholder | Where |
-|---|---|
-| Phone `(214) 000-0000` | `components/site-header.tsx`, `components/sections/footer.tsx` |
-| `[EMAIL]`, `[ADDRESS]`, `[HOURS]` | `components/sections/footer.tsx` |
-| Social links (not added yet) | footer |
-
-## Home page
-| Placeholder | File |
-|---|---|
-| "Sample data" numbers: +212%, 41 → 128 calls, $38,400/MO, call log rows, rank tracker | `components/sections/receipts.tsx` |
-| Receipts tabs HVAC / Dental have no data yet (only Roofing exists) | `components/sections/receipts.tsx` |
-| Services card one-line descriptions (DRAFT, written from the old bullets) | `components/sections/services.tsx` |
-| Services "Sample data · replace with real client numbers" note | `components/sections/services.tsx` |
-| Manifesto paragraph (DRAFT), `[FOUNDER NAME]` | `components/sections/pledges.tsx` |
-| Speed score "SAMPLE" badge (static 38/100 until PageSpeed route is wired) | `components/sections/contact.tsx` |
-| Hero search card example business and ratings | `components/sections/hero.tsx` |
-
-## About page (`/about`)
-| Placeholder | File |
-|---|---|
-| "Draft copy · confirm with the founder" (hero intro) | `components/sections/about/about-hero.tsx` |
-| `[YEAR]`, `[NUMBER]` (active clients), `[FOUNDER NAME]`, draft "Why we exist" statement | `components/sections/about/why-we-exist.tsx` |
-| Rule cards copy (draft) | `components/sections/about/how-we-work.tsx` |
-| Pledge wording (draft, confirm each with the founder) | `components/sections/about/pledges.tsx` |
-| City list (confirm service area) | `components/sections/about/where-we-work.tsx` |
-
-## Contact + FAQ page (`/contact`, FAQ at `/contact#faq`)
-| Placeholder | File |
-|---|---|
-| Form is static (no submit yet) | `components/sections/contact/audit-form.tsx` |
-| All 8 FAQ answers are DRAFT, `[PRICE]` in "How much does it cost?" | `components/sections/contact/faq.tsx` |
-
-## Marketing page (`/marketing`)
-| Placeholder | File |
-|---|---|
-| `[PRICE]` in "How do you charge?" (all FAQ answers are DRAFT) | `components/sections/marketing/faq.tsx` |
-| Child pages linked from the orbit, goal rows and index do not exist yet (`/marketing/seo` etc., `/web-design`, `/consulting`) | built one by one |
-
-## Web design page (`/web-design`)
-| Placeholder | File |
-|---|---|
-| Hero headline is DRAFT; mock site uses a sample name and phone | `components/sections/web-design/web-hero.tsx` |
-| Six feature one-liners are DRAFT | `six-things.tsx` |
-| Story beats are DRAFT | `your-story.tsx` |
-| Four process lines are DRAFT | `process.tsx` |
-| `[STACK DETAILS: confirm CMS or framework]`, draft FAQ answers | `faq.tsx` |
-
-## Consulting page (`/consulting`)
-| Placeholder | File |
-|---|---|
-| `[PRICE]` x3 (one per way to work) | `components/sections/consulting/ways-to-work.tsx` |
-| Sample audit findings in the hero note | `consulting-hero.tsx` |
-| Sample roadmap bars | `roadmap.tsx` |
-| Draft one-liners and FAQ answers | `deliverables.tsx`, `fit-check.tsx`, `faq.tsx` |
-
-## SEO page (`/marketing/seo`)
-| Placeholder | File |
-|---|---|
-| Sample search, businesses, ratings in the hero animation | `components/sections/seo/seo-hero.tsx` |
-| Sample monthly report (calls 128, keywords, chart) | `clear-steps.tsx` |
-| Draft bullets and step lines | `three-layers.tsx`, `clear-steps.tsx`, `month-by-month.tsx` |
-| Draft FAQ answers | `faq.tsx` |
-
-## Local SEO page (`/marketing/local-seo`)
-| Placeholder | File |
-|---|---|
-| Sample map, search and result card (Your Business, 4.9) | `components/sections/local-seo/local-hero.tsx` |
-| Sample report: calls per month, directions 214, visits 1,380, reviews 18 | `your-report.tsx` |
-| Draft FAQ answers (last three) | `faq.tsx` |
-
-## Content marketing page (`/marketing/content-marketing`)
-| Placeholder | File |
-|---|---|
-| Sample titles, sticky notes and the status line in the hero | `components/sections/content/content-hero.tsx` |
-| Draft one-liners in the four kinds and the four weeks | `four-kinds.tsx`, `how-it-runs.tsx` |
-| Draft FAQ answers (last three) | `faq.tsx` |
-
-## GEO page (`/marketing/geo`)
-| Placeholder | File |
-|---|---|
-| Sample AI answer, business name, ratings and the background-photo placeholder | `components/sections/geo/geo-hero.tsx` |
-| Sample "named" percentages (62%, tool bars) | `named-more.tsx` |
-| Draft FAQ answers (last three) | `faq.tsx` |
-
-## AI search optimization page (`/marketing/ai-search-optimization`)
-| Placeholder | File |
-|---|---|
-| Sample quote, business card in the hero | `components/sections/ai-search/ai-hero.tsx` |
-| Sample page mock (price range, address, phone) | `easy-to-quote.tsx` |
-| Sample quoted answers and the 29 total | `quoted-more.tsx` |
-| Draft FAQ answers (last three) | `faq.tsx` |
-
-## Paid advertising & PPC page (`/marketing/paid-advertising-ppc`)
-| Placeholder | File |
-|---|---|
-| Sample ad statement (12,400 / 54 calls / $38) and notifications | `components/sections/ppc/ppc-hero.tsx` |
-| Sample searches, Local Services card, banner placeholder (replace with a real banner) | `three-ways.tsx` |
-| Sample cost-per-call chart and stats | `every-dollar.tsx` |
-| Ad spend range ($1,500–$3,000) and draft FAQ answers | `faq.tsx` |
-
-## Social media marketing page (`/marketing/social-media-marketing`)
-| Placeholder | File |
-|---|---|
-| Hero photo is `public/social/image1.png` (swap the file or the path to change it) | `components/sections/social/social-hero.tsx` |
-| Four tiles per row: two real photos each (`public/social/image2-5.png`), the rest are placeholders to fill (add `src` on a tile) | `what-we-post.tsx` |
-| Sample October calendar and stats | `your-month.tsx` |
-| Draft FAQ answers (last three) | `faq.tsx` |
-
-## Not built yet
-Privacy and Terms text, `/services`, service sub-pages, `/contact` + FAQ, real form submit (email + lead storage), PageSpeed route, analytics, OG image, sitemap/robots.
+Section 1
+1. Change the Header Image: Replace the current header image with a separate
+image specifically for the Search Engine Results page.
+2. Update the Form Fields: Arrange the form fields in the following order:
+○ Name
+○ Website
+○ Phone Number
+○ Email
+○ How can we help you?
+3. Improve Text Visibility: The text on the website is not clearly visible. Please adjust
+its position to make it easier to read. You can move it to the center, increase the font
+size, or place it above or below the image so that the text is clearly visible.
+Content Change:
+H1: Turn AI Visibility Into Your Next Growth Opportunity.
+Subheading: Smarter Marketing. Stronger Visibility. More Qualified Leads.
+Paragraph: Boost Google and AI search visibility with AI SEO, GEO, strategic content, and
+web design to attract high-intent audiences, generate qualified leads, and accelerate
+business growth.
+Section 2
+Section 3
+Our services
+Everything You Need to Get Seen, Chosen & Grow.
+AI-powered SEO, GEO, web design, and digital marketing strategies to boost
+visibility, generate qualified leads, and accelerate growth.
+1. Marketing Services
+Get Found. Build Trust. Generate More Leads.
+From Google rankings to AI-powered search visibility, we create smarter marketing
+strategies that strengthen your brand authority, connect you with high-intent audiences, and
+drive qualified leads.
+Explore Marketing Services→
+Use GIF:
+https://yandex.com/images/search?from=tabbar&img_url=https%3A%2F%2Fwww.crosslinec
+reations.com%2Fwp-content%2Fuploads%2F2017%2F10%2FBanner_02_digital.gif&itype=g
+ifan&lr=112513&pos=9&rpt=simage&search_client=unknown&text=Get%20Found.%20Build
+%20Trust.%20Generate%20More%20Leads.%20%20Explore%20Marketing%20Services%
+E2%86%92
+This type of
+2. Web design & Development
+A Smarter Website for a More Competitive Digital World.
+From strategic design to custom development, we build responsive, user-focused websites
+that communicate your value, improve user experiences, and help convert visitors into
+customers.
+Explore Web Solutions →
+Use GIF:
+https://yandex.com/images/search?itype=gifan&search_client=robot&text=A+Smarter+Websi
+te+for+a+More+Competitive+Digital+World.+Explore+Web+Solutions+%E2%86%92&pos=1
+2&rpt=simage&img_url=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F81%2Ff2%2Fae%
+2F81f2aefa52db7916062603f78c09f3a2.jpg&from=tabbar&lr=112513
+3. Consulting Services
+Find Your Next Opportunity. Build Your Growth Roadmap.
+We connect business goals with actionable digital strategies, helping you prioritize the right
+opportunities, improve marketing performance, and create a clear path toward scalable
+growth.
+Explore Consulting Services →
+Use GIF:
+https://yandex.com/images/search?from=tabbar&img_url=https%3A%2F%2Fi.pinimg.com%
+2Foriginals%2F5f%2Fc4%2F5b%2F5fc45bb1aae018b4c6bc8a796596d800.gif&itype=gifan&
+lr=112513&pos=10&rpt=simage&search_client=robot&text=3.%20Business%20growth%20C
+onsulting%20Services
+This type of
+Section 4
+Real Strategies. Measurable Results. Lasting Growth.
+Use the following three websites for reference:
+1. https://www.taskrabbit.com/
+2. https://holdenroofing.com/
+3. https://www.jw.com/
+For each website, create a layout with three sections displayed side by side:
+1. Search Engine Results Page (SERP): Show how the website appears in Google
+search results.
+(Show an image of how the website appears in Google search results, including 1–5 relevant
+keywords for each website. Display the keywords along with their corresponding search
+result positions (rankings) to make them easy to compare.)
+2. Website Preview: Show a preview of the website on desktop and mobile devices.
+Use
+3. Google Analytics (GA) or Google Search Console (GSC) Graph: Display a graph
+showing the website's traffic, clicks, impressions, or other available performance
+data.
+Use
+Ya
+with number
+Section 5
+Our Process
+A Smarter Strategy. A Clearer Path to Growth.
+From strategy to execution, we combine marketing, AI-powered search, web development,
+and consulting to help your business boost visibility, attract qualified leads, and accelerate
+growth.
+01. Discover
+We understand your business, audience, and goals to identify the right growth opportunities.
+02. Strategize
+We build a tailored strategy around SEO, AI search visibility, web design, and your business
+needs.
+03. Build & Launch
+We bring your strategy to life with high-performing websites and targeted marketing solutions
+designed to attract and convert the right audience.
+04. Optimize & Grow
+We track performance, refine strategies, and uncover new opportunities to improve visibility,
+generate leads, and drive sustainable growth.
+Section 6
+Add a section like
+Reference: https://thriveagency.com/
+The Best Generative Engine Optimization
+Company for AI Visibility
+Helping Businesses Dominate AI-Powered Search
+Rapid advances in generative artificial intelligence (AI) models have reshaped how
+content is discovered and consumed. Traditional search engine optimization (SEO)
+is no longer enough to reach those looking for your offerings. To stay discoverable,
+you need to optimize for AI search.
+TechXi one of the top generative engine optimization companies for AI visibility.
+We’ve been testing and perfecting AI SEO strategies for large language models
+(LLMs) on our brand while other agencies experiment with your budget.
+In 2026, we saw significant increases in our AI search results with our internal data
+showing a +5,556% increase in overall AI-driven traffic, +1,078% from ChatGPT and
++404% from Gemini.
+Section 7
+Reference: https://thriveagency.com/
+What Our Clients Are Saying
+Don’t just take our word for it. Hear from our clients how our full-service marketing
+agency has helped them achieve their growth goals:
+Section 8 (Form and Footer)

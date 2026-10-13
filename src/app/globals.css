@@ -2,8 +2,9 @@
 
 :root {
   --accent: #ff4d00;
+  --button: #191919ff;
   --page: #f7f7f8;
-  --panel: #edeef1;
+  --panel: #e6e6e6ff;
   --ink: #0b0b0c;
   --paper: #fbfbf9;
   --text-strong: #1b1c1f;
@@ -18,12 +19,44 @@
 
 @theme inline {
   --color-accent: var(--accent);
+  --color-button: var(--button);
   --color-page: var(--page);
   --color-panel: var(--panel);
   --color-ink: var(--ink);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* local fonts from /public/fonts: use as font-<name> (e.g. font-mont, font-cinzel1) */
+  --font-cinzel1: "cinzel1", serif;
+  --font-cinzel2: "cinzel2", serif;
+  --font-cinzel3: "cinzel3", serif;
+  --font-cinzel4: "cinzel4", serif;
+  --font-mont: "mont", sans-serif;
+  --font-mont-ex: "mont-ex", sans-serif;
+  --font-morrison: "morrison", serif;
+  --font-nort: "nort", sans-serif;
+  --font-rayl: "rayl", sans-serif;
+  --font-motech: "motech", sans-serif;
+  --font-base: "base", sans-serif;
+  --font-pace: "pace", sans-serif;
+  --font-motion: "motion", sans-serif;
+  --font-ventura: "ventura", sans-serif;
 }
+
+/* local fonts: one family per file in /public/fonts, family name = the class name after "font-" */
+@font-face { font-family: "cinzel1"; src: url("/fonts/cinzel1.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "cinzel2"; src: url("/fonts/cinzel2.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "cinzel3"; src: url("/fonts/cinzel3.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "cinzel4"; src: url("/fonts/cinzel4.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "mont"; src: url("/fonts/mont.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "mont-ex"; src: url("/fonts/mont-ex.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "morrison"; src: url("/fonts/Morrison-Regular.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "nort"; src: url("/fonts/nort.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "rayl"; src: url("/fonts/rayl.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "motech"; src: url("/fonts/Motech.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "base"; src: url("/fonts/Baserona.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "pace"; src: url("/fonts/Paceon.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "motion"; src: url("/fonts/Motion.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "ventura"; src: url("/fonts/Ventura%20Free.ttf") format("truetype"); font-display: swap; }
 
 html {
   color-scheme: light;
@@ -135,3 +168,4 @@ html.lenis, html.lenis body { height: auto; }
 .a-mq3 { animation: mq3 var(--d, 60s) linear infinite; }
 .a-mq3-r { animation: mq3 var(--d, 60s) linear infinite reverse; }
 @media (prefers-reduced-motion: reduce) { .a-mq3, .a-mq3-r { animation: none !important; } }
+

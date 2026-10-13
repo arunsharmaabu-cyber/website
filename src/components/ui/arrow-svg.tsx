@@ -3,7 +3,7 @@ export default function ArrowSVG({ className = "" }: { className?: string }) {
     <svg
       viewBox="0 0 16 16"
       fill="none"
-      stroke="#FF4D00"
+      stroke="#f5f4f4ff"
       strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"

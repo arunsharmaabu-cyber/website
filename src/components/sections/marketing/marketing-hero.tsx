@@ -97,7 +97,7 @@ export default function MarketingHero() {
           ))}
 
           <div
-            className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-ink font-semibold tracking-[.14em] text-page shadow-[0_0_0_10px_#EDEEF1,0_0_0_11px_#0B0B0C]"
+            className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-ink font-semibold tracking-[.14em] text-page shadow-[0_0_0_10px_var(--panel),0_0_0_11px_#0B0B0C]"
             style={{ width: "calc(var(--s) * .234)", height: "calc(var(--s) * .234)", fontSize: "calc(var(--s) * .0358)" }}
           >
             <span className="pl-[.14em]">{CORE}</span>

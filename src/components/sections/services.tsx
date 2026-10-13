@@ -6,9 +6,8 @@ import Image from "next/image";
 import ArrowSVG from "@/components/ui/arrow-svg";
 
 // ───────── Copy for this section: edit the words here ─────────
-const HEADING = "What we build";
+const HEADING = "Our services";
 const INTRO = "Three services. One goal: be the first name Dallas sees.";
-const SAMPLE_NOTE = "Sample data · replace with real client numbers";
 
 // Each card: header strip (always visible in the stack) + heading, one short line, button, and a simple tile.
 const CARDS = [
@@ -83,7 +82,6 @@ export default function Services() {
           </h2>
           <div className="flex flex-col md:max-w-[520px] md:items-end md:gap-2">
             <p className="m-0 mt-2 text-[14px] leading-normal text-[#3A3C42] md:mt-0 md:text-right md:text-[16px] md:leading-[1.45]">{INTRO}</p>
-            <div className="mt-2 font-mono text-[10px] font-semibold uppercase tracking-[.1em] text-accent md:mt-0">{SAMPLE_NOTE}</div>
           </div>
         </div>
 
