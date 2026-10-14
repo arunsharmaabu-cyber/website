@@ -33,7 +33,7 @@ export default function Hero() {
       <style>{ART_CSS}</style>
       {/* skyline: centred, pinned to the bottom edge, never cropped. */}
       <picture
-        className="hero-art pointer-events-none absolute inset-x-0 bottom-0 z-[-10] mx-auto block w-full max-md:translate-y-3 md:w-[70%]"
+        className="hero-art pointer-events-none absolute inset-x-0 bottom-0 z-[-10] mx-auto block w-full max-md:translate-y-3 md:w-[75%]"
       >
         <source media="(min-width: 768px)" srcSet={desktopSet} sizes="100vw" />
         <img {...mobileProps} alt="" fetchPriority="high" className="block h-auto w-full select-none" />
@@ -50,20 +50,19 @@ export default function Hero() {
         <ArrowSVG className="size-4 " />
       </a>
 
-      <div className="relative z-[1] mx-auto box-border flex w-full max-w-[1440px] flex-col gap-10 px-5 pb-20 pt-28 md:flex-row md:items-center md:justify-between md:gap-[clamp(32px,5vw,80px)] md:px-10 md:pb-12 md:pt-10">
+      <div className="relative z-[1] mx-auto box-border flex w-full max-w-[1440px] flex-col gap-3 px-5 pb-20 pt-28 md:flex-row md:items-center md:justify-between md:gap-[clamp(32px,5vw,80px)] md:px-10 md:pb-12 md:pt-10">
         {/* LEFT: headline */}
         <div className="min-w-0 md:-translate-x-8 md:-translate-y-20 md:flex-1">
           <h1 className="m-0  font-normal text-ink">
-            <span className="block font-nort  text-[44px] leading-[.98] tracking-[0.03em] md:text-[clamp(48px,min(5.8vw,10vh),62px)]">{H1_BIG}</span>
-            <span className="mt-3  font-nort text-[5.6vw] leading-[1.25] tracking-[-0.02em] md:whitespace-normal md:mt-[clamp(10px,1.8vh,18px)] md:text-[clamp(30px,3.1vw,42px)]">
+            <span className="block font-nort  text-[32px] leading-[.98] tracking-[0.03em] md:text-[clamp(48px,min(5.8vw,10vh),62px)]">{H1_BIG}</span>
+            <span className="mt-3  font-nort text-[8.6vw] leading-[1.25] tracking-[0.02em] pl-1  md:whitespace-normal md:mt-[clamp(10px,1.8vh,18px)] md:text-[clamp(30px,3.1vw,42px)]">
               {H1_SMALL}
-              <span className="text-accent">.</span>
             </span>
           </h1>
           <TypedText
             text={SUBLINE}
             speedMs={50}
-            className="mt-5 font-serif text-[19px] font-medium leading-[1.12] tracking-[-0.02em] text-ink md:leading-[1.3] md:mt-[clamp(18px,3vh,32px)] md:max-w-[640px] md:text-[clamp(18px,1.5vw,22px)]"
+            className="mt-2 font-serif text-[19px] pl-1 font-medium leading-[1.12] tracking-[-0.02em] text-ink md:leading-[1.3] md:mt-[clamp(18px,3vh,32px)] md:max-w-[640px] md:text-[clamp(18px,1.5vw,22px)] "
           />
         </div>
 

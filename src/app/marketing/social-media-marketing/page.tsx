@@ -3,6 +3,7 @@ import SocialHero from "@/components/sections/social/social-hero";
 import WhatWePost from "@/components/sections/social/what-we-post";
 import YourMonth from "@/components/sections/social/your-month";
 import Faq, { FAQS } from "@/components/sections/social/faq";
+import Closer from "@/components/sections/closer";
 import Footer from "@/components/sections/footer";
 import PageReveal from "@/components/motion/page-reveal";
 
@@ -53,6 +54,7 @@ export default function SocialPage() {
           <Faq />
         </main>
       </PageReveal>
+      <Closer />
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>

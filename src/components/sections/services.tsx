@@ -38,7 +38,7 @@ const CARDS = [
     text: "From strategic design to custom development, we build responsive, user-focused websites that communicate your value, improve user experiences, and help convert visitors into customers.",
     cta: "Explore Web Solutions",
     href: "/web-design",
-    card: "bg-[#E3E5EA] border-[#CDD0D6] left-2 right-2 top-14 md:left-3.5 md:right-3.5 md:top-16",
+    card: "bg-[#E3E5EA] border-[#CDD0D6] left-2 right-2 top-11 md:left-3.5 md:right-3.5 md:top-16",
     line: "border-[#9A9DA6]",
     tagColor: "text-[#4B4E55]",
     shadow: "shadow-[0_-10px_24px_-18px_rgba(11,11,12,.35)] md:shadow-[0_-14px_30px_-20px_rgba(11,11,12,.35)]",
@@ -54,7 +54,7 @@ const CARDS = [
     text: "We connect business goals with actionable digital strategies, helping you prioritize the right opportunities, improve marketing performance, and create a clear path toward scalable growth.",
     cta: "Explore Consulting Services",
     href: "/consulting",
-    card: "bg-[#262626] border-[#4A4D55] text-[#F7F7F8] left-0 right-0 top-28 md:top-32",
+    card: "bg-[#262626] border-[#4A4D55] text-[#F7F7F8] left-0 right-0 top-[88px] md:top-32",
     line: "border-[#8A8D95]",
     tagColor: "text-[#D3D5DB]",
     shadow: "shadow-[0_-10px_24px_-18px_rgba(11,11,12,.45)] md:shadow-[0_-14px_30px_-20px_rgba(11,11,12,.45)]",
@@ -82,7 +82,7 @@ export default function Services() {
             <span className="text-accent">.</span>
           </h2>
           <div className="flex flex-col md:max-w-[520px] md:items-end md:gap-2">
-            <p className="m-0 mt-2 text-[14px] leading-normal text-[#3A3C42] md:mt-0 md:text-right md:text-[16px] md:leading-[1.45]">{INTRO}</p>
+            <p className="m-0 mt-2 text-[14px] leading-normal text-[#3A3C42] [@media(max-height:700px)]:hidden md:mt-0 md:text-right md:text-[16px] md:leading-[1.45]">{INTRO}</p>
           </div>
         </div>
 
@@ -95,11 +95,11 @@ export default function Services() {
                 id={c.id}
                 data-anim="card"
                 className={`absolute box-border flex flex-col overflow-hidden rounded-2xl border md:rounded-[20px] ${c.card} ${c.shadow} ${
-                  "h-[calc(100%-112px)] md:h-[calc(100%-128px)]"
+                  "h-[calc(100%-88px)] md:h-[calc(100%-128px)]"
                 }`}
               >
                 <header
-                  className={`box-border flex h-14 flex-none items-center justify-between gap-2 px-4 md:h-16 md:gap-4 md:border-b md:border-dashed md:px-7 ${c.line} border-b border-dashed`}
+                  className={`box-border flex h-11 flex-none items-center justify-between gap-2 px-4 md:h-16 md:gap-4 md:border-b md:border-dashed md:px-7 ${c.line} border-b border-dashed`}
                 >
                   <div className="flex items-center gap-3 md:gap-[18px]">
                     <h3 className="m-0 font-mono text-[12px] font-medium uppercase tracking-[.1em] md:font-sans md:text-[22px] md:font-semibold md:normal-case md:tracking-[-0.03em]">{c.title}</h3>
@@ -112,18 +112,18 @@ export default function Services() {
                 {/* body: visible on every card; later cards cover earlier ones so only the header strips remain */}
                 <div
                   data-anim="card-body"
-                  className={`min-h-0 flex-1 flex-col gap-4 px-4 pb-4 pt-8 md:flex-row md:gap-[clamp(24px,4vw,64px)] md:px-7 md:py-[clamp(20px,3.4vh,32px)] flex`}
+                  className={`min-h-0 flex-1 flex-col gap-3 px-4 pb-4 pt-8 [@media(max-height:700px)]:pt-5 md:flex-row md:gap-[clamp(24px,4vw,64px)] md:px-7 md:py-[clamp(20px,3.4vh,32px)] flex`}
                 >
                   <div className="flex min-w-0 flex-col justify-between gap-4 md:flex-[1.15_1_0%] md:gap-6">
-                    <h4 className="m-0 text-[22px] font-semibold leading-[1.06] tracking-[-0.045em] md:text-[clamp(26px,min(3vw,5vh),44px)] md:leading-[1.04]">
+                    <h4 className="m-0 text-[22px] font-semibold leading-[1.06] [@media(max-height:700px)]:text-[19px] tracking-[-0.045em] md:text-[clamp(26px,min(3vw,5vh),44px)] md:leading-[1.04]">
                       {c.heading.replace(/.$/, "")}
                       <span className="text-accent">.</span>
                     </h4>
                     <div>
-                      <p className="m-0 max-w-[520px] text-[13px] leading-[1.45] md:text-[16px] md:leading-[1.5]">{c.text}</p>
+                      <p className="m-0 max-w-[520px] text-[13px] leading-[1.4] [@media(max-height:700px)]:text-[12px] md:text-[16px] md:leading-[1.5]">{c.text}</p>
                       <a
                         href={c.href}
-                        className={`mt-4 box-border flex min-h-11 w-fit items-center justify-center gap-[10px] rounded-[4px] border px-[18px] font-mono text-[12px] font-medium uppercase tracking-[.1em] no-underline ${c.id === "consulting" ? "border-[#F7F7F8] text-[#F7F7F8]" : "border-ink text-ink"} md:mt-5 md:min-h-0 md:py-3`}
+                        className={`mt-3 box-border flex min-h-10 w-fit items-center justify-center gap-[8px] rounded-[4px] border px-[14px] font-mono text-[11px] font-medium uppercase tracking-[.06em] no-underline md:min-h-11 md:gap-[10px] md:px-[18px] md:text-[12px] md:tracking-[.1em] ${c.id === "consulting" ? "border-[#F7F7F8] text-[#F7F7F8]" : "border-ink text-ink"} md:mt-5 md:min-h-0 md:py-3`}
                       >
                         {c.cta}
                         <ArrowSVG className="size-4" />
@@ -135,8 +135,8 @@ export default function Services() {
                   <div
                     className={`relative overflow-hidden rounded-[14px] ${c.id === "marketing" ? "bg-[#F5F3F0]" : "bg-panel"} ${
                       c.id === "marketing"
-                        ? "min-h-[110px] flex-1 md:aspect-[1783/882] md:min-h-0 md:flex-[1_1_0%] md:self-center" // this picture is wide: size the box to it so nothing is cropped
-                        : "min-h-[110px] flex-1 md:flex-[1_1_0%]"
+                        ? "min-h-[64px] flex-1 md:aspect-[1783/882] md:min-h-0 md:flex-[1_1_0%] md:self-center" // this picture is wide: size the box to it so nothing is cropped
+                        : "min-h-[64px] flex-1 md:flex-[1_1_0%]"
                     }`}
                   >
                     {c.image ? (

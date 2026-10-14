@@ -5,7 +5,7 @@ import YourStory from "@/components/sections/web-design/your-story";
 import Process from "@/components/sections/web-design/process";
 import Faq, { FAQS } from "@/components/sections/web-design/faq";
 import WebCta from "@/components/sections/web-design/web-cta";
-import Footer from "@/components/sections/footer";
+import MainEnd from "@/components/sections/main-end";
 import PageReveal from "@/components/motion/page-reveal";
 
 export const metadata: Metadata = {
@@ -56,7 +56,7 @@ export default function WebDesignPage() {
           <WebCta />
         </main>
       </PageReveal>
-      <Footer />
+      <MainEnd />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>
   );

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import EnquiryStatusNote, { Honeypot } from "@/components/forms/enquiry-status";
+import { useEnquiry } from "@/components/forms/use-enquiry";
 import Pill from "@/components/ui/pill";
 import SolidButton from "@/components/ui/solid-button";
 
@@ -22,13 +24,14 @@ const SUBMIT = "Send my free audit";
 
 export default function AuditForm() {
   const [picked, setPicked] = useState<string[]>([SERVICES[0]]);
+  const enquiry = useEnquiry("contact-page", () => setPicked([SERVICES[0]]));
   const toggle = (s: string) => setPicked((p) => (p.includes(s) ? p.filter((x) => x !== s) : [...p, s]));
 
   return (
     <form
       id="audit"
-      onSubmit={(e) => e.preventDefault()}
-      className="m-0 box-border flex scroll-mt-24 flex-col"
+      onSubmit={(e) => enquiry.submit(e, picked)}
+      className="relative m-0 box-border flex scroll-mt-24 flex-col"
     >
       <div className="flex flex-col gap-6 md:gap-7">
         {FIELDS.map((f) => (
@@ -36,7 +39,7 @@ export default function AuditForm() {
             <label htmlFor={f.id} className="block font-mono text-[11px] uppercase tracking-[.1em] text-[#5C5F66]">
               {f.label}
             </label>
-            <input id={f.id} name={f.name} type={f.type} autoComplete={f.autoComplete} className={fieldCls} />
+            <input id={f.id} name={f.name} type={f.type} required={f.name === "name" || f.name === "email"} autoComplete={f.autoComplete} className={fieldCls} />
           </div>
         ))}
       </div>
@@ -54,9 +57,11 @@ export default function AuditForm() {
         </div>
       </div>
 
-      <SolidButton type="submit" className="mt-[26px] h-14 md:h-[60px]">
+      <SolidButton type="submit" disabled={enquiry.sending} className="mt-[26px] h-14 md:h-[60px]">
         {SUBMIT}
       </SolidButton>
+      <EnquiryStatusNote status={enquiry.status} note={enquiry.note} className="mt-4" />
+      <Honeypot />
 
     </form>
   );

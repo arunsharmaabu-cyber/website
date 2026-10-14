@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import EnquiryStatusNote, { Honeypot } from "@/components/forms/enquiry-status";
+import { useEnquiry } from "@/components/forms/use-enquiry";
 
 // ───────── Copy for this form: edit the words here ─────────
 const TITLE = "See how many more local customers you can get.";
@@ -29,12 +31,13 @@ function Icon({ children }: { children: React.ReactNode }) {
 
 export default function HeroForm() {
   const [message, setMessage] = useState("");
+  const enquiry = useEnquiry("hero", () => setMessage(""));
 
   return (
     // the form itself is the glass: light tint, strong blur, hairline edge, a very slight dark shadow
     <form
       id="audit"
-      onSubmit={(e) => e.preventDefault()}
+      onSubmit={(e) => enquiry.submit(e)}
       className="w-full scroll-mt-24 overflow-hidden rounded-[24px] border border-white/70 bg-white/25 shadow-[0_18px_40px_-22px_rgba(11,11,12,.22)] backdrop-blur-xl backdrop-saturate-150"
     >
       <div className="relative p-4 md:p-6">
@@ -50,7 +53,7 @@ export default function HeroForm() {
                 <circle cx="12" cy="8" r="3.6" />
                 <path d="M4.5 20c.9-3.6 3.9-5.5 7.5-5.5s6.6 1.9 7.5 5.5" />
               </Icon>
-              <input name="name" type="text" autoComplete="name" placeholder="Name" aria-label="Name" className={INPUT} />
+              <input name="name" type="text" required autoComplete="name" placeholder="Name" aria-label="Name" className={INPUT} />
             </label>
 
             <label className={FIELD}>
@@ -73,7 +76,7 @@ export default function HeroForm() {
                 <rect x="3.5" y="5.5" width="17" height="13" rx="2" />
                 <path d="M4 7l8 6 8-6" />
               </Icon>
-              <input name="email" type="email" autoComplete="email" placeholder="Email" aria-label="Email" className={INPUT} />
+              <input name="email" type="email" required autoComplete="email" placeholder="Email" aria-label="Email" className={INPUT} />
             </label>
 
             <label className={`${FIELD} col-span-2 h-auto items-start pb-9 pt-4 md:h-auto`}>
@@ -102,8 +105,9 @@ export default function HeroForm() {
             <h2 className="m-0 mr-auto max-w-[22ch] self-center font-serif text-[17px] font-medium leading-[1.2] tracking-[-0.02em] text-ink md:hidden">{TITLE}</h2>
             <button
               type="submit"
+              disabled={enquiry.sending}
               aria-label={CTA}
-              className="group flex cursor-pointer items-center gap-3 border-0 bg-transparent p-0 font-sans text-[16px] font-medium text-ink"
+              className="group flex cursor-pointer items-center gap-3 border-0 bg-transparent p-0 font-sans text-[16px] font-medium text-ink disabled:cursor-wait disabled:opacity-60"
             >
               <span className="flex size-12 flex-none items-center justify-center rounded-full bg-ink text-white transition-transform duration-200 group-hover:-translate-y-px">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="size-5 transition-transform duration-200 group-hover:translate-x-0.5">
@@ -113,6 +117,8 @@ export default function HeroForm() {
               <span className="hidden md:inline">{CTA}</span>
             </button>
           </div>
+          <EnquiryStatusNote status={enquiry.status} note={enquiry.note} className="mt-3" />
+          <Honeypot />
         </div>
       </div>
     </form>

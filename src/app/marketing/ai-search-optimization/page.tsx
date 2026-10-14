@@ -3,6 +3,7 @@ import AiHero from "@/components/sections/ai-search/ai-hero";
 import EasyToQuote from "@/components/sections/ai-search/easy-to-quote";
 import QuotedMore from "@/components/sections/ai-search/quoted-more";
 import Faq, { FAQS } from "@/components/sections/ai-search/faq";
+import Closer from "@/components/sections/closer";
 import Footer from "@/components/sections/footer";
 import PageReveal from "@/components/motion/page-reveal";
 
@@ -53,6 +54,7 @@ export default function AiSearchPage() {
           <Faq />
         </main>
       </PageReveal>
+      <Closer />
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>

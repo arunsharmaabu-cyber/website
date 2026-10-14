@@ -3,6 +3,7 @@ import LocalHero from "@/components/sections/local-seo/local-hero";
 import ThreeThings from "@/components/sections/local-seo/three-things";
 import YourReport from "@/components/sections/local-seo/your-report";
 import Faq, { FAQS } from "@/components/sections/local-seo/faq";
+import Closer from "@/components/sections/closer";
 import Footer from "@/components/sections/footer";
 import PageReveal from "@/components/motion/page-reveal";
 
@@ -53,6 +54,7 @@ export default function LocalSeoPage() {
           <Faq />
         </main>
       </PageReveal>
+      <Closer />
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>

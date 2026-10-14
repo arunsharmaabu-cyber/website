@@ -3,6 +3,7 @@ import GeoHero from "@/components/sections/geo/geo-hero";
 import FixFacts from "@/components/sections/geo/fix-facts";
 import NamedMore from "@/components/sections/geo/named-more";
 import Faq, { FAQS } from "@/components/sections/geo/faq";
+import Closer from "@/components/sections/closer";
 import Footer from "@/components/sections/footer";
 import PageReveal from "@/components/motion/page-reveal";
 
@@ -53,6 +54,7 @@ export default function GeoPage() {
           <Faq />
         </main>
       </PageReveal>
+      <Closer />
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>

@@ -5,7 +5,7 @@ import HowWeWork from "@/components/sections/about/how-we-work";
 import AboutPledges from "@/components/sections/about/pledges";
 import WhereWeWork from "@/components/sections/about/where-we-work";
 import AuditCta from "@/components/sections/about/audit-cta";
-import Footer from "@/components/sections/footer";
+import MainEnd from "@/components/sections/main-end";
 import PageReveal from "@/components/motion/page-reveal";
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function AboutPage() {
           <AuditCta />
         </main>
       </PageReveal>
-      <Footer />
+      <MainEnd />
     </>
   );
 }

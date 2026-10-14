@@ -3,6 +3,7 @@ import PpcHero from "@/components/sections/ppc/ppc-hero";
 import ThreeWays from "@/components/sections/ppc/three-ways";
 import EveryDollar from "@/components/sections/ppc/every-dollar";
 import Faq, { FAQS } from "@/components/sections/ppc/faq";
+import Closer from "@/components/sections/closer";
 import Footer from "@/components/sections/footer";
 import PageReveal from "@/components/motion/page-reveal";
 
@@ -53,6 +54,7 @@ export default function PpcPage() {
           <Faq />
         </main>
       </PageReveal>
+      <Closer />
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>

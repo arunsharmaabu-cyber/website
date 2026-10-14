@@ -3,9 +3,8 @@ import TrustBar from "@/components/sections/trust-bar";
 import Services from "@/components/sections/services";
 import Receipts from "@/components/sections/receipts";
 import Pipeline from "@/components/sections/pipeline";
-import Pledges from "@/components/sections/pledges";
-import Contact from "@/components/sections/contact";
-import CloserFooter from "@/components/sections/closer-footer";
+import WhyBest from "@/components/sections/why-best";
+import MainEnd from "@/components/sections/main-end";
 
 export default function Home() {
   return (
@@ -15,9 +14,8 @@ export default function Home() {
       <Services />
       <Receipts />
       <Pipeline />
-      <Pledges />
-      <Contact />
-      <CloserFooter />
+      <WhyBest />
+      <MainEnd />
     </main>
   );
 }

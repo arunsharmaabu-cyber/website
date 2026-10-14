@@ -3,6 +3,7 @@ import ContentHero from "@/components/sections/content/content-hero";
 import FourKinds from "@/components/sections/content/four-kinds";
 import HowItRuns from "@/components/sections/content/how-it-runs";
 import Faq, { FAQS } from "@/components/sections/content/faq";
+import Closer from "@/components/sections/closer";
 import Footer from "@/components/sections/footer";
 import PageReveal from "@/components/motion/page-reveal";
 
@@ -53,6 +54,7 @@ export default function ContentMarketingPage() {
           <Faq />
         </main>
       </PageReveal>
+      <Closer />
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>

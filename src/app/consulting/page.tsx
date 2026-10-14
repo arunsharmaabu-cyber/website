@@ -6,7 +6,7 @@ import Deliverables from "@/components/sections/consulting/deliverables";
 import FitCheck from "@/components/sections/consulting/fit-check";
 import Faq, { FAQS } from "@/components/sections/consulting/faq";
 import ConsultingCta from "@/components/sections/consulting/consulting-cta";
-import Footer from "@/components/sections/footer";
+import MainEnd from "@/components/sections/main-end";
 import PageReveal from "@/components/motion/page-reveal";
 
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ export default function ConsultingPage() {
           <ConsultingCta />
         </main>
       </PageReveal>
-      <Footer />
+      <MainEnd />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>
   );

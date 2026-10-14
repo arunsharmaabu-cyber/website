@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ContactHero from "@/components/sections/contact/contact-hero";
 import Faq, { FAQS } from "@/components/sections/contact/faq";
+import Closer from "@/components/sections/closer";
 import Footer from "@/components/sections/footer";
 import PageReveal from "@/components/motion/page-reveal";
 
@@ -30,6 +31,7 @@ export default function ContactPage() {
           <Faq />
         </main>
       </PageReveal>
+      <Closer />
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </>

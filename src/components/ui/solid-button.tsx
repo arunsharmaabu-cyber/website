@@ -8,7 +8,7 @@ export default function SolidButton({
 }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <button
-      className={`flex w-full items-center justify-center gap-3 rounded-[4px] border-0 bg-ink text-[13px] font-medium uppercase tracking-[.14em] text-page cursor-pointer ${className}`}
+      className={`flex w-full items-center justify-center gap-3 rounded-[4px] border-0 bg-ink text-[13px] font-medium uppercase tracking-[.14em] text-page cursor-pointer disabled:cursor-wait disabled:opacity-60 ${className}`}
       {...props}
     >
       {children}

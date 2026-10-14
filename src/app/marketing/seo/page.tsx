@@ -4,6 +4,7 @@ import ThreeLayers from "@/components/sections/seo/three-layers";
 import ClearSteps from "@/components/sections/seo/clear-steps";
 import MonthByMonth from "@/components/sections/seo/month-by-month";
 import Faq, { FAQS } from "@/components/sections/seo/faq";
+import Closer from "@/components/sections/closer";
 import Footer from "@/components/sections/footer";
 import PageReveal from "@/components/motion/page-reveal";
 
@@ -55,6 +56,7 @@ export default function SeoPage() {
           <Faq />
         </main>
       </PageReveal>
+      <Closer />
       <Footer />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>

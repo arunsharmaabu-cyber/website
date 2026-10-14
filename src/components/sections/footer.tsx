@@ -1,30 +1,22 @@
+import Image from "next/image";
 
 // ───────── Copy for the footer (shared by every page): edit the words here ─────────
 const LOCATION = "/DFW_TX";
 const FOOTER_ABOUT = "Marketing, web design and consulting for Dallas–Fort Worth businesses. We put your name first.";
 const COORDS = "32.7767° N, 96.7970° W";
-const MARKETING = {
-  title: "Marketing",
-  links: [
-    { label: "SEO", href: "/marketing/seo" },
-    { label: "Local SEO", href: "/marketing/local-seo" },
-    { label: "Content marketing", href: "/marketing/content-marketing" },
-    { label: "GEO", href: "/marketing/geo" },
-    { label: "AI search optimization", href: "/marketing/ai-search-optimization" },
-    { label: "Paid advertising & PPC", href: "/marketing/paid-advertising-ppc" },
-    { label: "Social media marketing", href: "/marketing/social-media-marketing" },
-  ],
-};
+// Main pages only: the sub-service pages are reached from the Marketing page, not listed here.
 const SERVICES = {
   title: "Services",
   links: [
+    { label: "Marketing", href: "/marketing" },
     { label: "Web design", href: "/web-design" },
     { label: "Consulting", href: "/consulting" },
   ],
 };
-const COMPANY = {
-  title: "Company",
+const PAGES = {
+  title: "Pages",
   links: [
+    { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
     { label: "FAQ", href: "/contact#faq" },
@@ -48,9 +40,7 @@ export default function Footer() {
     <footer className="box-border flex flex-col gap-8 bg-ink px-5 pb-6 pt-8 text-page md:gap-12 md:px-10 md:pb-7 md:pt-12">
       <div className="flex flex-col gap-8 md:flex-row md:flex-wrap md:justify-between md:gap-x-16 md:gap-y-10">
         <div className="flex min-w-0 flex-col gap-4 md:max-w-[360px] md:flex-[1_1_280px] md:gap-5">
-          <div className="text-[24px] font-semibold tracking-[.14em]">
-            TECHX<span className="ml-0.5 align-top text-[12px]">®</span>
-          </div>
+          <Image src="/logo-footer.png" alt="TechX" width={720} height={240} className="block h-8 w-auto self-start md:h-10" />
           <p className="m-0 text-[15px] leading-normal text-[#C9CBD1] md:text-[16px]">{FOOTER_ABOUT}</p>
           <div className="font-mono text-[11px] uppercase leading-[1.8] tracking-[.1em] text-[#9A9DA5]">
             {LOCATION}
@@ -59,31 +49,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-5 gap-y-7 md:flex md:min-w-0 md:flex-[2_1_560px] md:flex-wrap md:justify-end md:gap-x-12 md:gap-y-8">
-          <nav aria-label={MARKETING.title} className="col-span-2 min-w-0 md:col-auto md:flex-[1.4_1_220px]">
-            <div className={colTitle}>{MARKETING.title}</div>
-            <div className="grid grid-cols-2 gap-x-5 md:block">
-              {MARKETING.links.map((l) => (
+        <div className="grid grid-cols-2 gap-x-5 gap-y-8 md:flex md:min-w-0 md:flex-[2_1_560px] md:justify-end md:gap-x-16">
+          {[SERVICES, PAGES].map((c) => (
+            <nav key={c.title} aria-label={c.title} className="min-w-0 md:min-w-[150px]">
+              <div className={colTitle}>{c.title}</div>
+              {c.links.map((l) => (
                 <a key={l.label} href={l.href} className={linkCls}>
                   {l.label}
                 </a>
               ))}
-            </div>
-          </nav>
-          <div className="flex min-w-0 flex-col gap-6 md:flex-[1_1_150px]">
-            {[SERVICES, COMPANY].map((c) => (
-              <nav key={c.title} aria-label={c.title}>
-                <div className={colTitle}>{c.title}</div>
-                {c.links.map((l) => (
-                  <a key={l.label} href={l.href} className={linkCls}>
-                    {l.label}
-                  </a>
-                ))}
-              </nav>
-            ))}
-          </div>
-          <div className="min-w-0 md:flex-[1_1_170px]">
-            <div className={colTitle}>Talk to us</div>
+            </nav>
+          ))}
+          <div className="col-span-2 min-w-0 md:col-auto md:min-w-[200px]">
+            <div className={colTitle}>Contact</div>
             <a href={PHONE.href} className={`${linkCls} font-semibold`}>
               {PHONE.label}
             </a>

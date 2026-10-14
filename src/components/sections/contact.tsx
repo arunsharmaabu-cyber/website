@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import EnquiryStatusNote, { Honeypot } from "@/components/forms/enquiry-status";
+import { useEnquiry } from "@/components/forms/use-enquiry";
 import Pill from "@/components/ui/pill";
 import SolidButton from "@/components/ui/solid-button";
 
@@ -8,9 +10,7 @@ import SolidButton from "@/components/ui/solid-button";
 const HEADING = ["Find out what's", "costing you calls"];
 const INTRO = "Free, back in 24 hours, with your real numbers. No contract and no pushy sales call.";
 
-const SPEED_SCORE = 38;
-const SPEED_TEXT = "Your site scores 38 out of 100 on phones.";
-const SPEED_BADGE = "SAMPLE";
+
 
 const SERVICES_TITLE = "What do you need?";
 const SERVICES = ["Local SEO", "Web design", "Paid ads", "Brand", "Not sure yet"];
@@ -39,6 +39,7 @@ function Field({
 
 export default function Contact() {
   const [picked, setPicked] = useState<string[]>([SERVICES[0]]);
+  const enquiry = useEnquiry("contact-section", () => setPicked([SERVICES[0]]));
   const toggle = (label: string) => setPicked((p) => (p.includes(label) ? p.filter((x) => x !== label) : [...p, label]));
 
   return (
@@ -57,27 +58,15 @@ export default function Contact() {
         </div>
 
         {/* RIGHT: form */}
-        <form onSubmit={(e) => e.preventDefault()} className="m-0 flex w-full flex-col gap-7 md:max-w-[600px] md:flex-[1.1_1_0%] md:gap-[clamp(20px,3.6vh,32px)]">
+        <form onSubmit={(e) => enquiry.submit(e, picked)} className="relative m-0 flex w-full flex-col gap-7 md:max-w-[600px] md:flex-[1.1_1_0%] md:gap-[clamp(20px,3.6vh,32px)]">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2 md:gap-y-[clamp(16px,3vh,28px)]">
-            <Field id="c-name" label="Your name" type="text" autoComplete="name" />
-            <Field id="c-email" label="Email" type="email" autoComplete="email" />
-            <Field id="c-site" label="Website" type="text" autoComplete="url" />
+            <Field id="c-name" label="Your name" type="text" required autoComplete="name" />
+            <Field id="c-email" label="Email" type="email" required autoComplete="email" />
+            <Field id="c-site" name="website" label="Website" type="text" autoComplete="url" />
             <Field id="c-phone" label="Phone" type="tel" autoComplete="tel" />
             <Field id="c-industry" label="Industry" type="text" className="md:col-span-2" />
           </div>
 
-          {/* live speed score (static SAMPLE until the PageSpeed route is wired) */}
-          <div className="flex items-center gap-3">
-            <svg viewBox="0 0 40 40" className="size-9 flex-none" role="img" aria-label={"Mobile speed score " + SPEED_SCORE + " out of 100"}>
-              <circle cx="20" cy="20" r="16" fill="none" stroke="#DADCE1" strokeWidth="4" />
-              <circle cx="20" cy="20" r="16" fill="none" stroke="#FF4D00" strokeWidth="4" strokeLinecap="round" strokeDasharray="38.2 100.5" transform="rotate(-90 20 20)" />
-              <text x="20" y="24" textAnchor="middle" fontFamily="Geist, sans-serif" fontSize="12" fontWeight="700" fill="#0B0B0C">
-                {SPEED_SCORE}
-              </text>
-            </svg>
-            <span className="text-[14px] leading-[1.35] text-[#3A3C42]">{SPEED_TEXT}</span>
-            <span className="rounded-full border border-[#A9ACB4] px-2 py-0.5 font-mono text-[9px] tracking-[.1em] text-[#5C5F66]">{SPEED_BADGE}</span>
-          </div>
 
           <div>
             <div id="c-service" className="mb-3 font-mono text-[11px] uppercase tracking-[.1em] text-[#5C5F66]">
@@ -92,9 +81,11 @@ export default function Contact() {
             </div>
           </div>
 
-          <SolidButton type="submit" className="h-14 md:h-[58px]">
+          <SolidButton type="submit" disabled={enquiry.sending} className="h-14 md:h-[58px]">
             {SUBMIT}
           </SolidButton>
+          <EnquiryStatusNote status={enquiry.status} note={enquiry.note} />
+          <Honeypot />
         </form>
       </div>
     </section>

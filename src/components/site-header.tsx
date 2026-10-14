@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -51,14 +52,6 @@ function MenuBody({ open, compact, isActive, onNavigate }: { open: boolean; comp
   const [servicesOpen, setServicesOpen] = useState(false);
   const [marketingOpen, setMarketingOpen] = useState(false);
   const tab = open ? 0 : -1;
-
-  // every time the menu closes, fold the sub-lists back up
-  useEffect(() => {
-    if (!open) {
-      setServicesOpen(false);
-      setMarketingOpen(false);
-    }
-  }, [open]);
 
   // hovering opens (mouse only); tapping or Enter toggles
   const hover = (set: (v: boolean) => void) => (e: React.PointerEvent) => {
@@ -296,11 +289,8 @@ export default function SiteHeader() {
             <span aria-hidden="true" className={`absolute inset-0 rounded-[8px] ${PAPER} ${NOTCH}`} />
 
             {/* wordmark */}
-            <Link href="/" onClick={close} className="relative flex flex-1 flex-col justify-center px-4 no-underline md:px-6">
-              <span className="text-[17px] font-semibold leading-none tracking-[.14em] md:text-[19px]">
-                TECHX<span className="ml-0.5 align-top text-[10px] md:text-[11px]">®</span>
-              </span>
-              <span className="mt-1.5 font-mono text-[10px] uppercase leading-none tracking-[.1em] text-[#5C5F66]">{TAGLINE}</span>
+            <Link href="/" onClick={close} className="relative flex flex-1 flex-col justify-center px-3 no-underline md:px-4">
+              <Image src="/logo-header.png" alt="TechX" width={720} height={240} priority className="block h-[22px] w-auto self-start md:h-[42px]" />
             </Link>
 
             {/* menu button, in its own dashed compartment */}
@@ -329,7 +319,7 @@ export default function SiteHeader() {
             }`}
           >
             <div className={`max-h-[calc(100svh-120px)] overflow-y-auto rounded-[8px] ${PAPER} px-5 pb-5 pt-1`}>
-              <MenuBody open={open} compact isActive={isActive} onNavigate={close} />
+              <MenuBody key={String(open)} open={open} compact isActive={isActive} onNavigate={close} />
             </div>
           </div>
         </div>
@@ -344,7 +334,7 @@ export default function SiteHeader() {
         aria-hidden={!open}
       >
         <div className="min-h-full px-5 pb-8 pt-4">
-          <MenuBody open={open} isActive={isActive} onNavigate={close} />
+          <MenuBody key={String(open)} open={open} isActive={isActive} onNavigate={close} />
         </div>
       </div>
     </>

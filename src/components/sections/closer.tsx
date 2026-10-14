@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import { useCloserSlide } from "@/components/motion/use-closer-slide";
-import Footer from "@/components/sections/footer";
 import SectionLabel from "@/components/ui/section-label";
 
 // ───────── Copy for this section: edit the words here ─────────
@@ -19,7 +18,7 @@ function Blurb({ className = "" }: { className?: string }) {
   );
 }
 
-export default function CloserFooter() {
+export default function Closer() {
   const closerRef = useRef<HTMLElement>(null);
   useCloserSlide(closerRef);
 
@@ -64,7 +63,6 @@ export default function CloserFooter() {
         <Blurb className="md:hidden" />
       </section>
 
-      <Footer />
     </div>
   );
 }

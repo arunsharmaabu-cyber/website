@@ -4,7 +4,7 @@ import GoalSwitchboard from "@/components/sections/marketing/goal-switchboard";
 import TheSeven from "@/components/sections/marketing/the-seven";
 import Faq, { FAQS } from "@/components/sections/marketing/faq";
 import MarketingCta from "@/components/sections/marketing/marketing-cta";
-import Footer from "@/components/sections/footer";
+import MainEnd from "@/components/sections/main-end";
 import PageReveal from "@/components/motion/page-reveal";
 
 export const metadata: Metadata = {
@@ -54,7 +54,7 @@ export default function MarketingPage() {
           <MarketingCta />
         </main>
       </PageReveal>
-      <Footer />
+      <MainEnd />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </>
   );
