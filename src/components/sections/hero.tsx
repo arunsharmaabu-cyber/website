@@ -4,8 +4,8 @@ import TypedText from "@/components/ui/typed-text";
 import ArrowSVG from "@/components/ui/arrow-svg";
 
 // ───────── Copy for this section: edit the words here ─────────
-const H1_BIG = "Turn AI Visibility";
-const H1_SMALL = "Into Your Next Growth Opportunity";
+const H1_BIG = "Turn Searches Into";
+const H1_SMALL = "Real customer";
 const AUDIT_CTA = "Get audit";
 const SUBLINE ="Smarter Marketing. Stronger Visibility. More Qualified Leads.";
 
@@ -54,8 +54,8 @@ export default function Hero() {
         {/* LEFT: headline */}
         <div className="min-w-0 md:-translate-x-8 md:-translate-y-20 md:flex-1">
           <h1 className="m-0  font-normal text-ink">
-            <span className="block font-cinzel3 text-[44px] leading-[.98] tracking-[-0.04em] md:text-[clamp(48px,min(5.8vw,10vh),92px)]">{H1_BIG}</span>
-            <span className="mt-3  font-cinzel3 text-[5.6vw] leading-[1.25] tracking-[-0.02em] md:whitespace-normal md:mt-[clamp(10px,1.8vh,18px)] md:text-[clamp(20px,2.1vw,32px)]">
+            <span className="block font-nort  text-[44px] leading-[.98] tracking-[0.03em] md:text-[clamp(48px,min(5.8vw,10vh),62px)]">{H1_BIG}</span>
+            <span className="mt-3  font-nort text-[5.6vw] leading-[1.25] tracking-[-0.02em] md:whitespace-normal md:mt-[clamp(10px,1.8vh,18px)] md:text-[clamp(30px,3.1vw,42px)]">
               {H1_SMALL}
               <span className="text-accent">.</span>
             </span>
