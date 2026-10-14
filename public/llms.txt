@@ -1,0 +1,20 @@
+## Website
+- https://www.techx.media/
+
+## Main Pages
+- Homepage: https://www.techx.media/
+- Marketing: https://www.techx.media/marketing/
+- Web Design: https://www.techx.media/web-design/
+- Consulting: https://www.techx.media/consulting/
+- Case Studies: https://www.techx.media/case-studies/
+- About Us: https://www.techx.media/about-us/
+- Contact Us: https://www.techx.media/contact-us/
+
+## Services
+TechX Media helps businesses with SEO, technical SEO, on-page SEO, off-page SEO, content optimization, and AI search optimization.
+
+## Purpose
+This file provides AI systems with a concise overview of TechX Media and its website content.
+
+## Sitemap
+- https://www.techx.media/sitemap.xml

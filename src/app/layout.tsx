@@ -17,6 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.techx.media"),
+  robots: { index: true, follow: true, "max-image-preview": "large" },
   title: "TechX Media — Local SEO, Web Design & Paid Ads in Dallas–Fort Worth",
   description:
     "TechX Media builds SEO, web design, paid ads and local growth systems that get DFW businesses seen first and called first.",

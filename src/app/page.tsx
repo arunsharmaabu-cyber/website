@@ -9,6 +9,8 @@ import MainEnd from "@/components/sections/main-end";
 export default function Home() {
   return (
     <main id="top">
+      {/* written out in full so the tag is exactly https://www.techx.media/ (the metadata API drops the trailing slash on the root) */}
+      <link rel="canonical" href="https://www.techx.media/" />
       <Hero />
       <TrustBar />
       <Services />
